@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiservicios Automotriz CS</title>
+    <!-- Incluye Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos personalizados para el menú desplegable en móvil */
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Header y Navegación (Tailwind CSS) -->
+    <header class="bg-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="#inicio" class="block">
+                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564835/LOGO-MSCS_xaz9u0.jpg" alt="Logo de Multiservicios Automotriz CS" class="h-20 sm:h-24 md:h-28 rounded-lg">
+                </a>
+            </div>
+
+            <!-- Menú de navegación principal para desktop -->
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#inicio" class="text-lg font-semibold text-gray-700 hover:text-red-600 transition duration-300">Inicio</a>
+                <div class="relative group">
+                    <button class="text-lg font-semibold text-gray-700 hover:text-red-600 transition duration-300">Servicios</button>
+                    <!-- Menú desplegable para desktop -->
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 py-2">
+                        <a href="#diagnostico" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Diagnóstico</a>
+                        <a href="#revision" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Revisión General</a>
+                        <a href="#lubricacion" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Servicio de Lubricación</a>
+                        <a href="#mantenimiento" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Mantenimiento</a>
+                        <a href="#electrica" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Electricidad</a>
+                        <a href="#otros" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Otros Servicios</a>
+                    </div>
+                </div>
+                <a href="#sobre-nosotros" class="text-lg font-semibold text-gray-700 hover:text-red-600 transition duration-300">Sobre Nosotros</a>
+                <a href="#contacto" class="text-lg font-semibold text-gray-700 hover:text-red-600 transition duration-300">Contacto</a>
+            </nav>
+
+            <!-- Botón del menú móvil -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menú desplegable para móvil -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white shadow-lg transition-all duration-300 ease-in-out">
+            <nav class="py-4 px-6 space-y-2">
+                <a href="#inicio" class="block text-lg font-semibold text-gray-700 hover:bg-gray-200 p-2 rounded-md">Inicio</a>
+                <a href="#servicios" class="block text-lg font-semibold text-gray-700 hover:bg-gray-200 p-2 rounded-md">Servicios</a>
+                <div class="pl-4 space-y-1">
+                    <a href="#diagnostico" class="block text-base text-gray-600 hover:bg-gray-100 p-2 rounded-md">Diagnóstico</a>
+                    <a href="#revision" class="block text-base text-gray-600 hover:bg-gray-100 p-2 rounded-md">Revisión General</a>
+                    <a href="#lubricacion" class="block text-base text-gray-600 hover:bg-gray-100 p-2 rounded-md">Servicio de Lubricación</a>
+                    <a href="#mantenimiento" class="block text-base text-gray-600 hover:bg-gray-100 p-2 rounded-md">Mantenimiento</a>
+                    <a href="#electrica" class="block text-base text-gray-600 hover:bg-gray-100 p-2 rounded-md">Electricidad</a>
+                    <a href="#otros" class="block text-base text-gray-600 hover:bg-gray-100 p-2 rounded-md">Otros Servicios</a>
+                </div>
+                <a href="#sobre-nosotros" class="block text-lg font-semibold text-gray-700 hover:bg-gray-200 p-2 rounded-md">Sobre Nosotros</a>
+                <a href="#contacto" class="block text-lg font-semibold text-gray-700 hover:bg-gray-200 p-2 rounded-md">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de Inicio (Banner) -->
+    <section id="inicio" class="bg-gray-800 text-white pt-32 pb-16 md:pt-40 md:pb-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+                <!-- Contenido de texto -->
+                <div class="text-center md:text-left md:w-1/2">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">¡Bienvenidos a tu taller de Confianza en "San Diego"!</h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8">Servicio automotriz de profesionales expertos</p>
+                    <a href="#servicios" class="bg-red-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-red-700 transition duration-300">¡Bienvenidos!</a>
+                </div>
+                <!-- Imagen principal -->
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1703551498/P-1_bcoreg.png" alt="Imagen de presentación de la página" class="rounded-2xl shadow-xl w-full max-w-sm md:max-w-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios (Features) -->
+    <section id="servicios" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Nuestros Servicios</h2>
+                <p class="text-lg text-gray-600 mt-2">Expertos en el cuidado de tu vehículo.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1: Diagnóstico -->
+                <div id="diagnostico" class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564408/P-1_yvuvj2.png" alt="Diagnóstico computarizado" class="rounded-xl w-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Diagnóstico Computarizado</h3>
+                    <p class="text-sm text-gray-500 mb-4">Entonación de Vehículos Web</p>
+                    <p class="text-gray-700">Mantenimiento Preventivo de tu Vehiculo - todas las marcas.</p>
+                </div>
+                
+                <!-- Servicio 2: Revisión General -->
+                <div id="revision" class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564412/P-2_soo4z5.png" alt="Revisión General de Vehículos" class="rounded-xl w-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Revisión General de Vehículos</h3>
+                    <p class="text-sm text-gray-500 mb-4">Servicio y Mantenimiento de todo tipo de vehículos</p>
+                    <p class="text-gray-700">Revisión detallada de todos los sistemas de su vehículo.</p>
+                </div>
+
+                <!-- Servicio 3: Lubricación -->
+                <div id="lubricacion" class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564409/P-3_ewbk8e.png" alt="Servicio de Lubricación" class="rounded-xl w-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Servicio de Lubricación</h3>
+                    <p class="text-sm text-gray-500 mb-4">Cambio de aceite y fluidos</p>
+                    <p class="text-gray-700">Mantenimiento de lubricación de su vehículo para el óptimo desempeño.</p>
+                </div>
+
+                <!-- Servicio 4: Mantenimiento -->
+                <div id="mantenimiento" class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564409/P-4_imbrn1.png" alt="Servicio de Mantenimiento" class="rounded-xl w-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Mantenimiento</h3>
+                    <p class="text-sm text-gray-500 mb-4">Servicios generales de Mantenimiento</p>
+                    <p class="text-gray-700">Revisión y mantenimiento de frenos, suspensión y dirección.</p>
+                </div>
+
+                <!-- Servicio 5: Electricidad -->
+                <div id="electrica" class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564413/P-5_xxhb0d.png" alt="Servicios Eléctricos" class="rounded-xl w-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Electricidad</h3>
+                    <p class="text-sm text-gray-500 mb-4">Mantenimiento y Reparación</p>
+                    <p class="text-gray-700">Reparación de fallas eléctricas, alternadores y arranques.</p>
+                </div>
+
+                <!-- Servicio 6: Otros Servicios -->
+                <div id="otros" class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564408/P-6_w7edxu.png" alt="Otros Servicios" class="rounded-xl w-full mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Otros Servicios</h3>
+                    <p class="text-sm text-gray-500 mb-4">Mecánica Ligera en General</p>
+                    <p class="text-gray-700">Para tu seguridad: Ayudamos a mantener tu vehículo en óptimas condiciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Sobre Nosotros -->
+    <section id="sobre-nosotros" class="bg-gray-800 text-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Agradecemos tu preferencia!</h2>
+                <p class="text-lg text-gray-300">Sabiendo que tienes otras opciones</p>
+            </div>
+            <div class="mt-8 flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1703551498/P-1_bcoreg.png" alt="Imagen de agradecimiento" class="rounded-xl shadow-xl w-full max-w-sm md:max-w-md">
+                </div>
+                <div class="md:w-1/2 text-center md:text-left">
+                    <p class="text-lg text-gray-200">
+                        Nos Ocupamos en mantener en óptimo estado Tu vehículo para que viajes tranquilo y seguro.
+                    </p>
+                    <a href="#" class="mt-8 inline-block bg-red-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-red-700 transition duration-300">Gracias por visitarnos!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Contacto) -->
+    <footer id="contacto" class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <!-- Íconos de Redes Sociales -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in text-2xl"></i></a>
+            </div>
+            
+            <!-- Información de Copyright -->
+            <div class="text-sm">
+                <ul class="flex justify-center space-x-4">
+                    <li>&copy; 2025 Automotrizcs. Todos los derechos reservados.</li>
+                    <li>Diseño: <a href="#" class="hover:text-white transition duration-300">EBS Making</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de FontAwesome para los íconos de redes sociales -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Script para el menú móvil -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
