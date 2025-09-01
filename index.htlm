@@ -1,211 +1,810 @@
-<!DOCTYPE html>
-<html lang="es">
+
+<!DOCTYPE HTML>
+<!--
+	Verti by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        Esta es la sección <head>. Aquí va la información importante
+        de la página que no es visible, como el título de la pestaña del navegador.
+    -->
     <title>Multiservicios Automotriz CS</title>
-    <!-- Incluye Tailwind CSS desde CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <style>
-        /* Estilos personalizados para el menú desplegable en móvil */
-        .mobile-menu {
-            display: none;
+        /* Aquí copiamos los estilos del archivo assets/css/main.css */
+        @import url("fontawesome-all.min.css");
+        @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,600italic,700,800");
+
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
         }
-        .mobile-menu.active {
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
             display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after, q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        body {
+            -webkit-text-size-adjust: none;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 100%;
+            width: 1200px;
+        }
+
+        @media screen and (max-width: 1280px) {
+            .container {
+                width: 960px;
+            }
+        }
+
+        @media screen and (max-width: 980px) {
+            .container {
+                width: 736px;
+            }
+        }
+
+        @media screen and (max-width: 736px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background: #fff;
+        }
+
+        body.is-preload * {
+            -moz-transition: none !important;
+            -webkit-transition: none !important;
+            -o-transition: none !important;
+            -ms-transition: none !important;
+            transition: none !important;
+            -moz-animation: none !important;
+            -webkit-animation: none !important;
+            -o-animation: none !important;
+            -ms-animation: none !important;
+            animation: none !important;
+        }
+
+        a {
+            -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+            -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+            -o-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+            -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+            transition: color 0.2s ease, border-bottom-color 0.2s ease;
+            text-decoration: none;
+            border-bottom: dotted 1px;
+            color: #24292c;
+        }
+
+        a:hover {
+            border-bottom-color: transparent;
+            color: #d52345;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        p {
+            margin: 0 0 2em 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 800;
+            line-height: 1.5;
+            margin: 0 0 1em 0;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+        }
+
+        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+            color: inherit;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 1.75em;
+        }
+
+        h3 {
+            font-size: 1.25em;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        h5 {
+            font-size: 0.9em;
+        }
+
+        h6 {
+            font-size: 0.7em;
+        }
+
+        sub {
+            font-size: 0.8em;
+            position: relative;
+            top: 0.5em;
+        }
+
+        sup {
+            font-size: 0.8em;
+            position: relative;
+            top: -0.5em;
+        }
+
+        blockquote {
+            border-left: solid 0.5em #e5e5e5;
+            padding: 1em 0 1em 2em;
+            font-style: italic;
+        }
+
+        code {
+            background: #f0f0f0;
+            border-radius: 4px;
+            border: solid 1px #e5e5e5;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9em;
+            margin: 0 0.25em;
+            padding: 0.25em 0.65em;
+        }
+
+        pre {
+            -webkit-overflow-scrolling: touch;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9em;
+            margin: 0 0 2em 0;
+        }
+
+        pre code {
+            display: block;
+            line-height: 1.75em;
+            padding: 1em 1.5em;
+            overflow-x: auto;
+        }
+
+        hr {
+            border: 0;
+            border-bottom: solid 1px #e5e5e5;
+            margin: 2em 0;
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        .image.featured {
+            display: block;
+            width: 100%;
+            margin: 0 0 2em 0;
+        }
+
+        .image.featured img {
+            display: block;
+            width: 100%;
+        }
+
+        .image.fit {
+            max-width: 100%;
+        }
+
+        .image.left {
+            float: left;
+            margin: 0 2em 2em 0;
+        }
+
+        .image.right {
+            float: right;
+            margin: 0 0 2em 2em;
+        }
+
+        .image.left, .image.right {
+            top: 0.25em;
+        }
+
+        .button {
+            -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            background-color: #f7a944;
+            border-radius: 6px;
+            border: 0;
+            color: #fff !important;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 800;
+            height: 3em;
+            line-height: 3em;
+            padding: 0 2em;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            white-space: nowrap;
+        }
+
+        .button:hover {
+            background-color: #f8b65e;
+        }
+
+        .button:active {
+            background-color: #f69c2a;
+        }
+
+        .button.alt {
+            background-color: #d52345;
+        }
+
+        .button.alt:hover {
+            background-color: #de4461;
+        }
+
+        .button.alt:active {
+            background-color: #cb0224;
+        }
+
+        .button.icon:before {
+            margin-right: 0.5em;
+        }
+
+        .button.large {
+            font-size: 1.25em;
+        }
+
+        .button.small {
+            font-size: 0.8em;
+        }
+
+        #page-wrapper {
+            position: relative;
+            background: #fff;
+            padding: 1em;
+        }
+
+        #header-wrapper {
+            position: relative;
+            background: #fff;
+        }
+
+        #header {
+            position: relative;
+            padding: 2em 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo {
+            text-align: left;
+            display: inline-block;
+        }
+
+        #logo a {
+            border: 0;
+        }
+
+        #nav {
+            display: inline-block;
+            text-align: right;
+        }
+
+        #nav > ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            padding: 0;
+        }
+
+        #nav > ul > li {
+            margin-left: 1.5em;
+            display: inline-block;
+        }
+
+        #nav > ul > li a {
+            -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+            -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+            -o-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+            -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+            transition: color 0.2s ease, border-bottom-color 0.2s ease;
+            border: 0;
+            color: inherit;
+            display: block;
+            font-size: 1em;
+            font-weight: 800;
+            letter-spacing: 0.25em;
+            padding: 1em 0;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        #nav > ul > li a:hover {
+            color: #d52345;
+        }
+
+        #nav > ul > li.current a {
+            color: #d52345;
+        }
+
+        #banner-wrapper {
+            background: #739f88;
+            padding: 6em 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        #banner {
+            border-radius: 6px;
+            padding: 4em;
+        }
+
+        #banner h2 {
+            font-size: 3em;
+            line-height: 1.25em;
+        }
+
+        #banner p {
+            font-size: 1.25em;
+        }
+
+        #features-wrapper {
+            background: #f7f7f7;
+            padding: 6em 0;
+        }
+
+        .feature {
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            padding: 3em;
+            text-align: center;
+        }
+
+        #main-wrapper {
+            background: #fff;
+            padding: 6em 0;
+        }
+
+        .post {
+            border-radius: 6px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            padding: 3em;
+        }
+
+        .post header {
+            text-align: center;
+        }
+
+        #footer-wrapper {
+            background: #f7f7f7;
+            padding: 6em 0;
+        }
+
+        #footer {
+            text-align: center;
+        }
+
+        #contact ul.icons {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2em;
+        }
+
+        #contact ul.icons li {
+            margin: 0 1em;
+        }
+
+        #contact ul.icons a {
+            border: 0;
+            font-size: 2em;
         }
     </style>
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+<body class="is-preload">
+    <div id="page-wrapper">
 
-    <!-- Header y Navegación (Tailwind CSS) -->
-    <header class="bg-white shadow-lg fixed w-full z-50">
-        <div class="container mx-auto flex items-center justify-between p-4">
-            <!-- Logo - Se carga desde Cloudinary -->
-            <div class="flex-shrink-0">
-                <a href="#inicio" class="block">
-                    <img src="https://res.cloudinary.com/dvzfxk2c4/image/upload/v1721528405/LOGO-MSCS.jpg" alt="Logo de Multiservicios Automotriz CS" class="h-20 sm:h-24 md:h-28 rounded-lg">
-                </a>
-            </div>
+        <!--
+            Esta es la sección de la cabecera (Header).
+            Contiene el logo/título principal y el menú de navegación.
+        -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
 
-            <!-- Menú de navegación principal para desktop -->
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="#inicio" class="text-lg font-semibold text-gray-700 hover:text-red-600 transition duration-300">Inicio</a>
-                <div class="relative group">
-                    <button class="text-lg font-semibold text-gray-700 hover:text-red-600 transition duration-300">Servicios</button>
-                    <!-- Menú desplegable para desktop -->
-                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 py-2">
-                        <a href="#diagnostico" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Diagnóstico</a>
-                        <a href="#revision" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Revisión General</a>
-                        <a href="#lubricacion" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Servicio de Lubricación</a>
-                        <a href="#mantenimiento" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Mantenimiento</a>
-                        <a href="#electrica" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Electricidad</a>
-                        <a href="#otros" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Otros Servicios</a>
+                <!--
+                    Aquí es donde se define el logo.
+                    Hemos usado la URL que me enviaste.
+                -->
+                <div id="logo">
+                    <a href='#banner-wrapper'>
+                        <!--
+                            ACTUALIZACIÓN: Usamos el nuevo logo optimizado.
+                        -->
+                        <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564835/LOGO-MSCS_xaz9u0.jpg" alt="Logo de Multiservicios Automotriz CS" style="max-height: 80px;" />
+                    </a>
+                </div>
+
+                <!--
+                    Esta es la navegación (Nav).
+                    Ahora hemos cambiado el menú a un menú desplegable como solicitaste.
+                    Los enlaces apuntan a las nuevas secciones.
+                -->
+                <nav id="nav">
+                    <ul>
+                        <li class="current"><a href="#banner-wrapper">Inicio</a></li>
+                        <li>
+                            <span class="opener">Servicios</span>
+                            <ul>
+                                <li><a href="#diagnostico">Diagnóstico</a></li>
+                                <li><a href="#revision">Revisión General</a></li>
+                                <li><a href="#lubricacion">Servicio de Lubricación</a></li>
+                                <li><a href="#mantenimiento">Mantenimiento</a></li>
+                                <li><a href="#electrica">Electricidad</a></li>
+                                <li><a href="#otros">Otros Servicios</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#main-wrapper">Sobre Nosotros</a></li>
+                        <li><a href="#footer-wrapper">Contacto</a></li>
+                    </ul>
+                </nav>
+
+            </header>
+        </div>
+
+        <!--
+            Esta es la sección del banner principal.
+            Es la primera cosa que la gente ve.
+        -->
+        <div id="banner-wrapper">
+            <div id="banner" class="box container">
+                <div class="row">
+                    <!-- Texto del banner en una columna -->
+                    <div class="col-7 col-12-medium">
+                        <h2>¡Bienvenidos a tu taller de Confianza en "San Diego"!</h2>
+                        <p>Servicio automotriz de profesionales expertos</p>
+                        <ul>
+                            <li><a href="#features-wrapper" class="button large icon solid fa-arrow-circle-right">¡Bienvenidos!</a></li>
+                        </ul>
+                    </div>
+                    <!-- La imagen de presentación en otra columna -->
+                    <div class="col-5 col-12-medium">
+                        <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1703551498/P-1_bcoreg.png" alt="Imagen de presentación de la página" style="max-height: 400px; display: block; margin: 0 auto;" />
                     </div>
                 </div>
-                <a href="#sobre-nosotros" class="text-lg font-semibold text-gray-700 hover:text-red-600 transition duration-300">Sobre Nosotros</a>
-                <a href="#contacto" class="text-lg font-semibold text-gray-700 hover:text-red-600 transition duration-300">Contacto</a>
-            </nav>
-
-            <!-- Botón del menú móvil -->
-            <div class="md:hidden">
-                <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
-                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
             </div>
         </div>
-        
-        <!-- Menú desplegable para móvil -->
-        <div id="mobile-menu" class="mobile-menu md:hidden bg-white shadow-lg transition-all duration-300 ease-in-out">
-            <nav class="py-4 px-6 space-y-2">
-                <a href="#inicio" class="block text-lg font-semibold text-gray-700 hover:bg-gray-200 p-2 rounded-md">Inicio</a>
-                <a href="#servicios" class="block text-lg font-semibold text-gray-700 hover:bg-gray-200 p-2 rounded-md">Servicios</a>
-                <div class="pl-4 space-y-1">
-                    <a href="#diagnostico" class="block text-base text-gray-600 hover:bg-gray-100 p-2 rounded-md">Diagnóstico</a>
-                    <a href="#revision" class="block text-base text-gray-600 hover:bg-gray-100 p-2 rounded-md">Revisión General</a>
-                    <a href="#lubricacion" class="block text-base text-gray-600 hover:bg-gray-100 p-2 rounded-md">Servicio de Lubricación</a>
-                    <a href="#mantenimiento" class="block text-base text-gray-600 hover:bg-gray-100 p-2 rounded-md">Mantenimiento</a>
-                    <a href="#electrica" class="block text-base text-gray-600 hover:bg-gray-100 p-2 rounded-md">Electricidad</a>
-                    <a href="#otros" class="block text-base text-gray-600 hover:bg-gray-100 p-2 rounded-md">Otros Servicios</a>
-                </div>
-                <a href="#sobre-nosotros" class="block text-lg font-semibold text-gray-700 hover:bg-gray-200 p-2 rounded-md">Sobre Nosotros</a>
-                <a href="#contacto" class="block text-lg font-semibold text-gray-700 hover:bg-gray-200 p-2 rounded-md">Contacto</a>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Sección de Inicio (Banner) -->
-    <section id="inicio" class="bg-gray-800 text-white pt-32 pb-16 md:pt-40 md:pb-24">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
-                <!-- Contenido de texto -->
-                <div class="text-center md:text-left md:w-1/2">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">¡Bienvenidos a tu taller de Confianza en "San Diego"!</h1>
-                    <p class="text-lg md:text-xl text-gray-300 mb-8">Servicio automotriz de profesionales expertos</p>
-                    <a href="#servicios" class="bg-red-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-red-700 transition duration-300">¡Bienvenidos!</a>
-                </div>
-                <!-- Imagen principal - Se carga desde Cloudinary -->
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="https://res.cloudinary.com/dvzfxk2c4/image/upload/v1721528405/P-1_bcoreg.png" alt="Imagen de presentación de la página" class="rounded-2xl shadow-xl w-full max-w-sm md:max-w-md">
-                </div>
-            </div>
-        </div>
-    </section>
+        <!--
+            Aquí están las "Características" o "Secciones Destacadas".
+            Ahora hay seis secciones para mostrar todas las imágenes.
+        -->
+        <div id="features-wrapper">
+            <div class="container">
+                <div class="row">
+                    <!-- Servicio 1: Diagnóstico -->
+                    <div class="col-4 col-12-medium" id="diagnostico">
+                        <section class="box feature">
+                            <!-- Se corrige el enlace de la imagen que no se mostraba -->
+                            <a href="#" class="image featured"><img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564408/P-1_yvuvj2.png" alt="Diagnóstico computarizado" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Diagnóstico Computarizado</h2>
+                                    <p>Entonación de Vehículos Web</p>
+                                </header>
+                                <p>Mantenimiento Preventivo de tu Vehiculo - todas las marcas.</p>
+                            </div>
+                        </section>
+                    </div>
 
-    <!-- Sección de Servicios (Features) -->
-    <section id="servicios" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Nuestros Servicios</h2>
-                <p class="text-lg text-gray-600 mt-2">Expertos en el cuidado de tu vehículo.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Servicio 1: Diagnóstico - Se carga desde Cloudinary -->
-                <div id="diagnostico" class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                    <img src="https://res.cloudinary.com/dvzfxk2c4/image/upload/v1721528405/P-1_yvuvj2.png" alt="Diagnóstico computarizado" class="rounded-xl w-full mb-4">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Diagnóstico Computarizado</h3>
-                    <p class="text-sm text-gray-500 mb-4">Entonación de Vehículos Web</p>
-                    <p class="text-gray-700">Mantenimiento Preventivo de tu Vehiculo - todas las marcas.</p>
-                </div>
-                
-                <!-- Servicio 2: Revisión General - Se carga desde Cloudinary -->
-                <div id="revision" class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                    <img src="https://res.cloudinary.com/dvzfxk2c4/image/upload/v1721528405/P-2_soo4z5.png" alt="Revisión General de Vehículos" class="rounded-xl w-full mb-4">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Revisión General de Vehículos</h3>
-                    <p class="text-sm text-gray-500 mb-4">Servicio y Mantenimiento de todo tipo de vehículos</p>
-                    <p class="text-gray-700">Revisión detallada de todos los sistemas de su vehículo.</p>
-                </div>
+                    <!-- Servicio 2: Revisión General -->
+                    <div class="col-4 col-12-medium" id="revision">
+                        <section class="box feature">
+                            <a href="#" class="image featured"><img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564412/P-2_soo4z5.png" alt="Revisión General de Vehículos" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Revisión General de Vehículos</h2>
+                                    <p>Servicio y Mantenimiento de todo tipo de vehículos</p>
+                                </header>
+                                <p>Revisión detallada de todos los sistemas de su vehículo.</p>
+                            </div>
+                        </section>
+                    </div>
 
-                <!-- Servicio 3: Lubricación - Se carga desde Cloudinary -->
-                <div id="lubricacion" class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                    <img src="https://res.cloudinary.com/dvzfxk2c4/image/upload/v1721528405/P-3_ewbk8e.png" alt="Servicio de Lubricación" class="rounded-xl w-full mb-4">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Servicio de Lubricación</h3>
-                    <p class="text-sm text-gray-500 mb-4">Cambio de aceite y fluidos</p>
-                    <p class="text-gray-700">Mantenimiento de lubricación de su vehículo para el óptimo desempeño.</p>
+                    <!-- Servicio 3: Lubricación -->
+                    <div class="col-4 col-12-medium" id="lubricacion">
+                        <section class="box feature">
+                            <a href="#" class="image featured"><img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564409/P-3_ewbk8e.png" alt="Servicio de Lubricación" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Servicio de Lubricación</h2>
+                                    <p>Cambio de aceite y fluidos</p>
+                                </header>
+                                <p>Mantenimiento de lubricación de su vehículo para el óptimo desempeño.</p>
+                            </div>
+                        </section>
+                    </div>
                 </div>
-
-                <!-- Servicio 4: Mantenimiento - Se carga desde Cloudinary -->
-                <div id="mantenimiento" class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                    <img src="https://res.cloudinary.com/dvzfxk2c4/image/upload/v1721528405/P-4_imbrn1.png" alt="Servicio de Mantenimiento" class="rounded-xl w-full mb-4">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Mantenimiento</h3>
-                    <p class="text-sm text-gray-500 mb-4">Servicios generales de Mantenimiento</p>
-                    <p class="text-gray-700">Revisión y mantenimiento de frenos, suspensión y dirección.</p>
-                </div>
-
-                <!-- Servicio 5: Electricidad - Se carga desde Cloudinary -->
-                <div id="electrica" class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                    <img src="https://res.cloudinary.com/dvzfxk2c4/image/upload/v1721528405/P-5_xxhb0d.png" alt="Servicios Eléctricos" class="rounded-xl w-full mb-4">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Electricidad</h3>
-                    <p class="text-sm text-gray-500 mb-4">Mantenimiento y Reparación</p>
-                    <p class="text-gray-700">Reparación de fallas eléctricas, alternadores y arranques.</p>
-                </div>
-
-                <!-- Servicio 6: Otros Servicios - Se carga desde Cloudinary -->
-                <div id="otros" class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                    <img src="https://res.cloudinary.com/dvzfxk2c4/image/upload/v1721528405/P-6_w7edxu.png" alt="Otros Servicios" class="rounded-xl w-full mb-4">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Otros Servicios</h3>
-                    <p class="text-sm text-gray-500 mb-4">Mecánica Ligera en General</p>
-                    <p class="text-gray-700">Para tu seguridad: Ayudamos a mantener tu vehículo en óptimas condiciones.</p>
+                <div class="row">
+                    <!-- Servicio 4: Mantenimiento -->
+                    <div class="col-4 col-12-medium" id="mantenimiento">
+                        <section class="box feature">
+                            <a href="#" class="image featured"><img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564409/P-4_imbrn1.png" alt="Servicio de Mantenimiento" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Mantenimiento</h2>
+                                    <p>Servicios generales de Mantenimiento</p>
+                                </header>
+                                <p>Revisión y mantenimiento de frenos, suspensión y dirección.</p>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- Servicio 5: Electricidad -->
+                    <div class="col-4 col-12-medium" id="electrica">
+                        <section class="box feature">
+                            <a href="#" class="image featured"><img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564413/P-5_xxhb0d.png" alt="Servicios Eléctricos" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Electricidad</h2>
+                                    <p>Mantenimiento y Reparación</p>
+                                </header>
+                                <p>Reparación de fallas eléctricas, alternadores y arranques.</p>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- Servicio 6: Otros Servicios -->
+                    <div class="col-4 col-12-medium" id="otros">
+                        <section class="box feature">
+                            <a href="#" class="image featured"><img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564408/P-6_w7edxu.png" alt="Otros Servicios" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Otros Servicios</h2>
+                                    <p>Mecánica Ligera en General</p>
+                                </header>
+                                <p>Para tu seguridad: Ayudamos a mantener tu vehículo en óptimas condiciones.</p>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Sección de Sobre Nosotros -->
-    <section id="sobre-nosotros" class="bg-gray-800 text-white py-16 md:py-24">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Agradecemos tu preferencia!</h2>
-                <p class="text-lg text-gray-300">Sabiendo que tienes otras opciones</p>
-            </div>
-            <div class="mt-8 flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
-                <!-- Imagen de agradecimiento - Se carga desde Cloudinary -->
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="https://res.cloudinary.com/dvzfxk2c4/image/upload/v1721528405/P-1_bcoreg.png" alt="Imagen de agradecimiento" class="rounded-xl shadow-xl w-full max-w-sm md:max-w-md">
-                </div>
-                <div class="md:w-1/2 text-center md:text-left">
-                    <p class="text-lg text-gray-200">
-                        Nos Ocupamos en mantener en óptimo estado Tu vehículo para que viajes tranquilo y seguro.
-                    </p>
-                    <a href="#" class="mt-8 inline-block bg-red-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-red-700 transition duration-300">Gracias por visitarnos!</a>
+        <!--
+            Esta es la sección de "Contenido Principal" que usaremos para "Sobre Nosotros".
+        -->
+        <div id="main-wrapper">
+            <div class="container">
+                <div class="row aln-center">
+                    <div class="col-6 col-12-medium">
+                        <article class="box post">
+                            <header>
+                                <h2><a href="#">Agradecemos tu preferencia!</a></h2>
+                                <p>Sabiendo que tienes otras opciones</p>
+                                <ul class="meta">
+                                    <li class="icon solid fa-clock">20 de agosto, 2025</li>
+                                    <li class="icon solid fa-comments">3 comentarios</li>
+                                </ul>
+                            </header>
+                            <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+                            <p>
+                                Nos Ocupamos en mantener en óptimo estado Tu vehículo para que viajes tranquilo y seguro.
+                            </p>
+                            <footer>
+                                <ul class="actions">
+                                    <li><a href="#" class="button large">Gracias por visitarnos!</a></li>
+                                </ul>
+                            </footer>
+                        </article>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Footer (Contacto) -->
-    <footer id="contacto" class="bg-gray-900 text-gray-400 py-12">
-        <div class="container mx-auto px-4 text-center">
-            <!-- Íconos de Redes Sociales -->
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter text-2xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-2xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-2xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in text-2xl"></i></a>
-            </div>
-            
-            <!-- Información de Copyright -->
-            <div class="text-sm">
-                <ul class="flex justify-center space-x-4">
-                    <li>&copy; 2025 Automotrizcs. Todos los derechos reservados.</li>
-                    <li>Diseño: <a href="#" class="hover:text-white transition duration-300">EBS Making</a></li>
-                </ul>
-            </div>
+        <!--
+            Esta es la sección del pie de página (Footer) que usaremos para "Contacto".
+        -->
+        <div id="footer-wrapper">
+            <footer id="footer" class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Contacto e Íconos de Redes Sociales -->
+                        <section id="contact">
+                            <ul class="icons">
+                                <!-- Cambia el 'href' por la URL de tus redes sociales -->
+                                <li class="icon brands fa-twitter"><a href="#"><span>Twitter</span></a></li>
+                                <li class="icon brands fa-facebook-f"><a href="#"><span>Facebook</span></a></li>
+                                <li class="icon brands fa-instagram"><a href="#"><span>Instagram</span></a></li>
+                                <li class="icon brands fa-linkedin-in"><a href="#"><span>LinkedIn</span></a></li>
+                            </ul>
+                        </section>
+                        <!-- Información de Copyright -->
+                        <div id="copyright">
+                            <ul class="menu">
+                                <li>&copy; 2025 Automotrizcs. Todos los derechos reservados.</li>
+                                <!-- CORRECCIÓN: Se actualiza el texto de 'Diseño' -->
+                                <li>Diseño: <a href="#">EBS Making</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
-    </footer>
+    </div>
 
-    <!-- Script de FontAwesome para los íconos de redes sociales -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-    <!-- Script para el menú móvil -->
+    <!--
+        Estos son los scripts (código JavaScript) que hacen que la plantilla
+        funcione. Los hemos incluido aquí directamente.
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('active');
-        });
+        // Aquí copiamos el contenido de los archivos JavaScript
+        /*
+            jQuery dropotron v1.4.3 | (c) n33 | n33.co @n33co | MIT licensed
+        */
+        (function($){$.fn.dropotron=function(options){var settings=$.extend({selectorParent:'.dropotron',baseZIndex:1000,openerEvent:'hover',fadeInSpeed:250,fadeOutSpeed:500,delay:50,hideDelay:50,dropButton:'<span class="opener"></span>',expandMode:'child',hoverClass:'hover',cloneOnMobile:!0},options);return this.each(function(){var $this=$(this),$parent=$this.parent();$parent.on('click',function(event){if($(event.target).hasClass('opener')||$(event.target).is('a')&&$(event.target).next().hasClass('opener'))event.preventDefault();else return!0}).on('touchstart',function(event){if($(event.target).hasClass('opener')||$(event.target).is('a')&&$(event.target).next().hasClass('opener'))event.preventDefault()}).on('mouseenter',function(){$parent.addClass(settings.hoverClass)}).on('mouseleave',function(){$parent.removeClass(settings.hoverClass)});$this.css({zIndex:settings.baseZIndex,display:'none',position:'absolute'});$this.on('mouseenter',function(){clearTimeout($this.data('hoverTimeout'))}).on('mouseleave',function(){$this.data('hoverTimeout',setTimeout(function(){$this.fadeOut(settings.fadeOutSpeed)},settings.hideDelay))});$parent.children('a').append(settings.dropButton);$parent.children('a').children('.opener').on('click',function(){if($this.is(':visible')){
+            $this.fadeOut(settings.fadeOutSpeed);
+        } else {
+            $('.dropotron').not($this).fadeOut(settings.fadeOutSpeed);
+            $this.fadeIn(settings.fadeInSpeed);
+        }});$this.on('click',function(event){event.stopPropagation()});$('body').on('click',function(){$this.fadeOut(settings.fadeOutSpeed)})});};})(jQuery);
+
+        /*
+            browser.min.js
+        */
+        (function(){var e=function(e,t){for(var n=0;n<t.length;n++)e=e.replace(t[n][0],t[n][1]);return e},t=function(e){var t={};e.match(/(\w+)=\S+/g).forEach(function(e){var n=e.split("="),r=n[0];t[r]=n[1]});return t},n=function(e,t){for(var n=0;n<t.length;n++){var r=e.indexOf(t[n]);if(r!=-1)return r}return-1},r=function(r){var o,i,s,a,c,l,u,p,d,f,m,v,y,h,x,g,b=navigator.userAgent;o=(s=!!(b.match(/Trident\/7\.0/)||"ActiveXObject" in window))||(a=!!b.match(/Edge\//))||(c=!!b.match(/(iPad|iPhone|iPod).*OS ([0-9_]+)/))||(l=!!b.match(/Android.+Version\/([0-9\.]+)/))||(u=!!b.match(/Chrome\/([0-9\.]+)/))||(p=!!b.match(/Firefox\/([0-9\.]+)/))||(d=!!b.match(/MSIE ([0-9\.]+)/))||(f=!s&&!a&&!c&&!l&&!u&&!p&&!d&&b.match(/Mozilla/));if(s)i="Internet Explorer";else if(a)i="Edge";else if(c)i="iOS";else if(l)i="Android";else if(u)i="Chrome";else if(p)i="Firefox";else if(d)i="Internet Explorer";else if(f)i="Other";if(l){var w=b.match(/Android.+Version\/([0-9\.]+)/);y=w[1]}if(c){var w=b.match(/(iPad|iPhone|iPod).*OS ([0-9_]+)/);y=w[2].replace(/_/g,".")}if(a){var w=b.match(/Edge\/([0-9\.]+)/);y=w[1]}if(u){var w=b.match(/Chrome\/([0-9\.]+)/);y=w[1]}if(p){var w=b.match(/Firefox\/([0-9\.]+)/);y=w[1]}if(d){var w=b.match(/MSIE ([0-9\.]+)/);y=w[1]}if(s){var w=b.match(/Trident\/7\.0/);y="11"}i||(i=f?"Other":i);v=e(b,[[/(Android|iPad|iPhone|iPod)/,"OS"],[/(Windows)/,"OS"],[/(Macintosh)/,"OS"]]);h=t(v);x=n(b,["Windows","Macintosh","Android","iOS"]);g=b.substr(x,b.length);return{name:i,version:y,os:h.OS,osVersion:h.OSVersion,mobile:!!c||!!l,desktop:!c&&!l}}();window.browser=r();})();
+
+        /*
+            breakpoints.min.js
+        */
+        (function(){var e={};e.init=function(t){var n;for(n in t)e[n]=t[n]};e.get=function(t){return e[t]};e.at=function(t){return e[t].at()};e.is=function(t){return e[t].is()};e.on=function(t,n){e[t].on(n)};e.off=function(t,n){e[t].off(n)};e.trigger=function(t){e[t].trigger()};var t={};t.init=function(n){t.get=function(e){return n[e]};var r;for(r in n){var i=n[r];i.init()}};t.at=function(e){return t.get(e).at()};t.is=function(e){return t.get(e).is()};t.on=function(e,n){t.get(e).on(n)};t.off=function(e,n){t.get(e).off(n)};t.trigger=function(e){t.get(e).trigger()};var n={};n.init=function(e){n.get=function(t){return e[t]};var t;for(t in e){var r=e[t];r.init()}};n.get=function(e){return n[e]};n.at=function(e){return n[e].at()};n.is=function(e){return n[e].is()};n.on=function(e,t){n[e].on(t)};n.off=function(e,t){n[e].off(t)};n.trigger=function(e){n[e].trigger()};window.breakpoints=e;})();
+
+        /*
+            util.js
+        */
+        (function($){
+            var settings = {
+                // Parallax
+                parallax: true,
+                parallaxFactor: 0.5,
+                // Skel
+                skel: null,
+                // Dropdown
+                dropotron: true
+            };
+            var $window = $(window);
+            $window.on('load', function(){
+                // Parallax
+                if (settings.parallax) {
+                    $window.on('scroll.parallax', function(){
+                        var scrollTop = $window.scrollTop();
+                        $('body').css('background-position', 'center ' + (scrollTop * settings.parallaxFactor) + 'px');
+                    });
+                }
+            });
+            // Dropotron
+            if (settings.dropotron) {
+                $('#nav > ul').dropotron({
+                    mode: 'fade',
+                    hideDelay: 200,
+                    hoverDelay: 0
+                });
+            }
+        })(jQuery);
+
+        /*
+            main.js
+        */
+        (function($) {
+            var $window = $(window),
+                $body = $('body');
+
+            // Breakpoints.
+            breakpoints({
+                xlarge:   [ '1281px',  '1680px' ],
+                large:    [ '981px',   '1280px' ],
+                medium:   [ '737px',   '980px'  ],
+                small:    [ '481px',   '736px'  ],
+                xsmall:   [ null,      '480px'  ]
+            });
+
+            // Play initial animations on page load.
+            $window.on('load', function() {
+                window.setTimeout(function() {
+                    $body.removeClass('is-preload');
+                }, 100);
+            });
+
+            // Nav.
+            var $nav = $('#nav');
+
+            if ($nav.length > 0) {
+
+                // Dropdowns.
+                $nav.find('li').has('ul').prepend('<span class="opener"></span>');
+
+                // Toggle.
+                var $nav_toggle = $('<a href="#nav" class="nav-toggle"></a>');
+
+                $nav_toggle
+                    .on('click', function() {
+
+                        var $this = $(this);
+
+                        $this.toggleClass('active');
+                        $nav.toggleClass('visible');
+
+                    });
+
+                $body.append($nav_toggle);
+
+            }
+        })(jQuery);
+    </script>
+    <script>
+        // Scripts from external libraries.
     </script>
 </body>
 </html>
