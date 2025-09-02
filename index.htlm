@@ -1,810 +1,295 @@
-
-<!DOCTYPE HTML>
-<!--
-	Verti by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <!--
-        Esta es la sección <head>. Aquí va la información importante
-        de la página que no es visible, como el título de la pestaña del navegador.
-    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiservicios Automotriz CS</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        /* Aquí copiamos los estilos del archivo assets/css/main.css */
-        @import url("fontawesome-all.min.css");
-        @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,600italic,700,800");
-
-        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-        }
-
-        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-            display: block;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
-            line-height: 1;
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
         }
 
-        ol, ul {
-            list-style: none;
+        /* Estilos para los botones flotantes */
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        blockquote, q {
-            quotes: none;
-        }
-
-        blockquote:before, blockquote:after, q:before, q:after {
-            content: '';
-            content: none;
-        }
-
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-
-        body {
-            -webkit-text-size-adjust: none;
-        }
-
-        .container {
-            margin: 0 auto;
-            max-width: 100%;
-            width: 1200px;
-        }
-
-        @media screen and (max-width: 1280px) {
-            .container {
-                width: 960px;
-            }
-        }
-
-        @media screen and (max-width: 980px) {
-            .container {
-                width: 736px;
-            }
-        }
-
-        @media screen and (max-width: 736px) {
-            .container {
-                width: 100%;
-            }
-        }
-
-        html {
-            box-sizing: border-box;
-        }
-
-        *, *:before, *:after {
-            box-sizing: inherit;
-        }
-
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            background: #fff;
-        }
-
-        body.is-preload * {
-            -moz-transition: none !important;
-            -webkit-transition: none !important;
-            -o-transition: none !important;
-            -ms-transition: none !important;
-            transition: none !important;
-            -moz-animation: none !important;
-            -webkit-animation: none !important;
-            -o-animation: none !important;
-            -ms-animation: none !important;
-            animation: none !important;
-        }
-
-        a {
-            -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-            -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-            -o-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-            -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-            transition: color 0.2s ease, border-bottom-color 0.2s ease;
-            text-decoration: none;
-            border-bottom: dotted 1px;
-            color: #24292c;
-        }
-
-        a:hover {
-            border-bottom-color: transparent;
-            color: #d52345;
-        }
-
-        strong, b {
-            font-weight: 600;
-        }
-
-        em, i {
-            font-style: italic;
-        }
-
-        p {
-            margin: 0 0 2em 0;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 800;
-            line-height: 1.5;
-            margin: 0 0 1em 0;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-        }
-
-        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-            color: inherit;
-        }
-
-        h1 {
-            font-size: 2.5em;
-        }
-
-        h2 {
-            font-size: 1.75em;
-        }
-
-        h3 {
-            font-size: 1.25em;
-        }
-
-        h4 {
-            font-size: 1em;
-        }
-
-        h5 {
-            font-size: 0.9em;
-        }
-
-        h6 {
-            font-size: 0.7em;
-        }
-
-        sub {
-            font-size: 0.8em;
-            position: relative;
-            top: 0.5em;
-        }
-
-        sup {
-            font-size: 0.8em;
-            position: relative;
-            top: -0.5em;
-        }
-
-        blockquote {
-            border-left: solid 0.5em #e5e5e5;
-            padding: 1em 0 1em 2em;
-            font-style: italic;
-        }
-
-        code {
-            background: #f0f0f0;
-            border-radius: 4px;
-            border: solid 1px #e5e5e5;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 0.9em;
-            margin: 0 0.25em;
-            padding: 0.25em 0.65em;
-        }
-
-        pre {
-            -webkit-overflow-scrolling: touch;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 0.9em;
-            margin: 0 0 2em 0;
-        }
-
-        pre code {
-            display: block;
-            line-height: 1.75em;
-            padding: 1em 1.5em;
-            overflow-x: auto;
-        }
-
-        hr {
-            border: 0;
-            border-bottom: solid 1px #e5e5e5;
-            margin: 2em 0;
-        }
-
-        .align-left {
-            text-align: left;
-        }
-
-        .align-center {
-            text-align: center;
-        }
-
-        .align-right {
-            text-align: right;
-        }
-
-        .image.featured {
-            display: block;
-            width: 100%;
-            margin: 0 0 2em 0;
-        }
-
-        .image.featured img {
-            display: block;
-            width: 100%;
-        }
-
-        .image.fit {
-            max-width: 100%;
-        }
-
-        .image.left {
-            float: left;
-            margin: 0 2em 2em 0;
-        }
-
-        .image.right {
-            float: right;
-            margin: 0 0 2em 2em;
-        }
-
-        .image.left, .image.right {
-            top: 0.25em;
-        }
-
-        .button {
-            -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-            -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-            -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-            -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-            background-color: #f7a944;
-            border-radius: 6px;
-            border: 0;
-            color: #fff !important;
+        /* Estilos para la sección de preguntas frecuentes */
+        .faq-item {
             cursor: pointer;
-            display: inline-block;
-            font-weight: 800;
-            height: 3em;
-            line-height: 3em;
-            padding: 0 2em;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            white-space: nowrap;
+            transition: all 0.3s ease;
         }
-
-        .button:hover {
-            background-color: #f8b65e;
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
         }
-
-        .button:active {
-            background-color: #f69c2a;
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Ajusta este valor si la respuesta es más larga */
         }
-
-        .button.alt {
-            background-color: #d52345;
-        }
-
-        .button.alt:hover {
-            background-color: #de4461;
-        }
-
-        .button.alt:active {
-            background-color: #cb0224;
-        }
-
-        .button.icon:before {
-            margin-right: 0.5em;
-        }
-
-        .button.large {
-            font-size: 1.25em;
-        }
-
-        .button.small {
-            font-size: 0.8em;
-        }
-
-        #page-wrapper {
-            position: relative;
-            background: #fff;
-            padding: 1em;
-        }
-
-        #header-wrapper {
-            position: relative;
-            background: #fff;
-        }
-
-        #header {
-            position: relative;
-            padding: 2em 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #logo {
-            text-align: left;
-            display: inline-block;
-        }
-
-        #logo a {
-            border: 0;
-        }
-
-        #nav {
-            display: inline-block;
-            text-align: right;
-        }
-
-        #nav > ul {
-            display: flex;
-            justify-content: flex-end;
-            list-style: none;
-            padding: 0;
-        }
-
-        #nav > ul > li {
-            margin-left: 1.5em;
-            display: inline-block;
-        }
-
-        #nav > ul > li a {
-            -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-            -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-            -o-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-            -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-            transition: color 0.2s ease, border-bottom-color 0.2s ease;
-            border: 0;
-            color: inherit;
-            display: block;
-            font-size: 1em;
-            font-weight: 800;
-            letter-spacing: 0.25em;
-            padding: 1em 0;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        #nav > ul > li a:hover {
-            color: #d52345;
-        }
-
-        #nav > ul > li.current a {
-            color: #d52345;
-        }
-
-        #banner-wrapper {
-            background: #739f88;
-            padding: 6em 0;
-            text-align: center;
-            color: #fff;
-        }
-
-        #banner {
-            border-radius: 6px;
-            padding: 4em;
-        }
-
-        #banner h2 {
-            font-size: 3em;
-            line-height: 1.25em;
-        }
-
-        #banner p {
-            font-size: 1.25em;
-        }
-
-        #features-wrapper {
-            background: #f7f7f7;
-            padding: 6em 0;
-        }
-
-        .feature {
-            background: #fff;
-            border-radius: 6px;
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-            padding: 3em;
-            text-align: center;
-        }
-
-        #main-wrapper {
-            background: #fff;
-            padding: 6em 0;
-        }
-
-        .post {
-            border-radius: 6px;
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-            padding: 3em;
-        }
-
-        .post header {
-            text-align: center;
-        }
-
-        #footer-wrapper {
-            background: #f7f7f7;
-            padding: 6em 0;
-        }
-
-        #footer {
-            text-align: center;
-        }
-
-        #contact ul.icons {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2em;
-        }
-
-        #contact ul.icons li {
-            margin: 0 1em;
-        }
-
-        #contact ul.icons a {
-            border: 0;
-            font-size: 2em;
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
         }
     </style>
 </head>
-<body class="is-preload">
-    <div id="page-wrapper">
+<body class="bg-gray-100">
 
-        <!--
-            Esta es la sección de la cabecera (Header).
-            Contiene el logo/título principal y el menú de navegación.
-        -->
-        <div id="header-wrapper">
-            <header id="header" class="container">
+    <!-- Sección de Cabecera con Logo y Teléfono -->
+    <header class="bg-gray-900 text-white py-4">
+        <div class="container mx-auto flex items-center justify-between px-6">
+            <div class="flex items-center space-x-4">
+                <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564835/LOGO-MSCS_xaz9u0.jpg" alt="Logo" class="h-10 w-10 rounded-full">
+                <span class="text-xl font-bold">Multiservicios Automotriz CS</span>
+            </div>
+            <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." class="flex items-center space-x-2 hover:text-gray-400 transition-colors duration-300">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>+58 412 439 2241</span>
+            </a>
+        </div>
+    </header>
 
-                <!--
-                    Aquí es donde se define el logo.
-                    Hemos usado la URL que me enviaste.
-                -->
-                <div id="logo">
-                    <a href='#banner-wrapper'>
-                        <!--
-                            ACTUALIZACIÓN: Usamos el nuevo logo optimizado.
-                        -->
-                        <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564835/LOGO-MSCS_xaz9u0.jpg" alt="Logo de Multiservicios Automotriz CS" style="max-height: 80px;" />
+    <!-- Sección de Menú (Nav) -->
+    <header class="bg-gray-900 text-white shadow-lg">
+        <div class="container mx-auto p-6 flex justify-between items-center">
+            <h1 class="text-2xl md:text-3xl font-bold">Multiservicios Automotriz CS</h1>
+            <nav class="hidden md:flex space-x-6 text-lg">
+                <a href="#inicio" class="hover:text-gray-400 transition duration-300">Inicio</a>
+                <a href="#servicios" class="hover:text-gray-400 transition duration-300">Servicios</a>
+                <a href="#contacto" class="hover:text-gray-400 transition duration-300">Contacto</a>
+                <!-- Nuevo enlace de menú -->
+                <a href="#ganar-ingresos" class="hover:text-gray-400 transition duration-300">Ganar Ingresos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Principal (Hero) -->
+    <main class="container mx-auto p-8">
+        <section id="inicio" class="text-center mb-12">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">Mantenimiento y Reparación de Confianza</h2>
+                <!-- Imagen de portada "P-1" -->
+                <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755314502/P-1_bcoreg.png" alt="Imagen de portada del taller" class="mx-auto my-6 rounded-lg shadow-md">
+                <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+                    Tu vehículo merece el mejor cuidado. En nuestro taller, ofrecemos diagnósticos precisos, reparaciones eficientes y un servicio al cliente excepcional.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." class="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-md">
+                        Agenda una Cita
+                    </a>
+                    <a href="#servicios" class="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-md">
+                        Ver Servicios
                     </a>
                 </div>
+            </div>
+        </section>
 
-                <!--
-                    Esta es la navegación (Nav).
-                    Ahora hemos cambiado el menú a un menú desplegable como solicitaste.
-                    Los enlaces apuntan a las nuevas secciones.
-                -->
-                <nav id="nav">
-                    <ul>
-                        <li class="current"><a href="#banner-wrapper">Inicio</a></li>
-                        <li>
-                            <span class="opener">Servicios</span>
-                            <ul>
-                                <li><a href="#diagnostico">Diagnóstico</a></li>
-                                <li><a href="#revision">Revisión General</a></li>
-                                <li><a href="#lubricacion">Servicio de Lubricación</a></li>
-                                <li><a href="#mantenimiento">Mantenimiento</a></li>
-                                <li><a href="#electrica">Electricidad</a></li>
-                                <li><a href="#otros">Otros Servicios</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#main-wrapper">Sobre Nosotros</a></li>
-                        <li><a href="#footer-wrapper">Contacto</a></li>
-                    </ul>
-                </nav>
+        <!-- Sección de Servicios -->
+        <section id="servicios" class="bg-white p-8 rounded-xl shadow-lg mb-12">
+            <h3 class="text-3xl font-bold text-gray-800 text-center mb-8">Nuestros Servicios</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 con imagen P-2 -->
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md text-center">
+                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564412/P-2_soo4z5.png" alt="Diagnóstico Computarizado" class="mx-auto w-full h-auto mb-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 text-xl mb-2">Diagnóstico Computarizado</h4>
+                    <p class="text-gray-600">Identificamos el problema de tu vehículo con la última tecnología.</p>
+                </div>
+                <!-- Servicio 2 con imagen P-3 -->
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md text-center">
+                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564409/P-3_ewbk8e.png" alt="Mecánica General" class="mx-auto w-full h-auto mb-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 text-xl mb-2">Mecánica General</h4>
+                    <p class="text-gray-600">Reparaciones de motor, frenos, suspensión y más.</p>
+                </div>
+                <!-- Servicio 3 con imagen P-5 -->
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md text-center">
+                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564413/P-5_xxhb0d.png" alt="Mantenimiento Preventivo" class="mx-auto w-full h-auto mb-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 text-xl mb-2">Mantenimiento Preventivo</h4>
+                    <p class="text-gray-600">Cambio de aceite, filtros y chequeos para evitar problemas futuros.</p>
+                </div>
+            </div>
+        </section>
 
-            </header>
-        </div>
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="bg-white p-8 rounded-xl shadow-lg mb-12">
+            <div class="text-center">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">Contáctanos y Agenda tu Cita</h3>
+                <p class="text-gray-600 mb-6 max-w-lg mx-auto">
+                    Estamos listos para ayudarte con cualquier problema mecánico.
+                </p>
+                <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." class="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-md">
+                    Llamar Ahora
+                </a>
+            </div>
+        </section>
 
-        <!--
-            Esta es la sección del banner principal.
-            Es la primera cosa que la gente ve.
-        -->
-        <div id="banner-wrapper">
-            <div id="banner" class="box container">
-                <div class="row">
-                    <!-- Texto del banner en una columna -->
-                    <div class="col-7 col-12-medium">
-                        <h2>¡Bienvenidos a tu taller de Confianza en "San Diego"!</h2>
-                        <p>Servicio automotriz de profesionales expertos</p>
-                        <ul>
-                            <li><a href="#features-wrapper" class="button large icon solid fa-arrow-circle-right">¡Bienvenidos!</a></li>
-                        </ul>
+        <!-- Sección para la página de Emprende World -->
+        <section id="ganar-ingresos" class="bg-white p-8 rounded-xl shadow-lg mb-12">
+            <div class="text-center">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">Gana Ingresos con Nosotros</h3>
+                <p class="text-gray-600 mb-6 max-w-lg mx-auto">
+                    Aquí puedes ver cómo empezar a generar ingresos.
+                </p>
+                <!-- Imagen de "Emprende World" -->
+                <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564408/P-6_w7edxu.png" alt="Emprende World" class="mx-auto w-full h-auto my-6 rounded-lg shadow-md">
+                <!-- Nuevo botón de registro -->
+                <a href="https://www.emprendeworld.com/websignup?ref=52065737" class="bg-green-600 text-white px-8 py-4 mt-6 rounded-full font-semibold hover:bg-green-700 transition duration-300 shadow-md">
+                    Registro
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección de Preguntas Frecuentes para Emprende World -->
+        <section id="faq" class="bg-white p-8 rounded-xl shadow-lg mb-12">
+            <h3 class="text-3xl font-bold text-gray-800 text-center mb-8">Preguntas Frecuentes (FAQ)</h3>
+            <div class="max-w-2xl mx-auto space-y-4">
+                <!-- Pregunta 1 -->
+                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold text-gray-800">¿Qué es Emprende World?</h4>
+                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
                     </div>
-                    <!-- La imagen de presentación en otra columna -->
-                    <div class="col-5 col-12-medium">
-                        <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1703551498/P-1_bcoreg.png" alt="Imagen de presentación de la página" style="max-height: 400px; display: block; margin: 0 auto;" />
+                    <div class="faq-answer mt-4 text-gray-600">
+                        <p>Emprende World es una plataforma que te permite generar ingresos a través de la venta de productos digitales y servicios. Ofrecemos herramientas, entrenamiento y apoyo para que puedas construir tu propio negocio online.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold text-gray-800">¿Cómo funciona el registro?</h4>
+                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-600">
+                        <p>El registro es un proceso simple y rápido. Solo necesitas hacer clic en el botón "Registro" y serás redirigido a la página oficial. Una vez allí, completa tus datos para crear tu cuenta y empezar tu camino como emprendedor.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold text-gray-800">¿Se necesita experiencia previa?</h4>
+                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-600">
+                        <p>No, no necesitas experiencia previa. La plataforma de Emprende World ofrece toda la capacitación necesaria para que aprendas desde cero. Tienen módulos de entrenamiento, tutoriales y un equipo de soporte que te guiará en cada paso.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold text-gray-800">¿Cómo me capacito dentro de la plataforma?</h4>
+                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-600">
+                        <p>Una vez registrado, tendrás acceso a un área de miembros con contenido exclusivo que incluye módulos de video, guías y tutoriales. Además, hay sesiones en vivo y grupos de apoyo para que puedas resolver tus dudas.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold text-gray-800">¿Cuál es el costo de la membresía?</h4>
+                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-600">
+                        <p>Emprende World ofrece diferentes planes de membresía para adaptarse a tus necesidades. La inversión varía según el nivel de acceso y las herramientas que necesites para tu negocio. Puedes ver los detalles en la página oficial.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 6 -->
+                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold text-gray-800">¿Cómo me pagan mis comisiones?</h4>
+                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-600">
+                        <p>Las comisiones se pagan de manera segura y confiable a través de métodos de pago internacionales. Puedes recibir tus ganancias en tu cuenta bancaria o monedero virtual, dependiendo de tu ubicación y preferencia.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 7 -->
+                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold text-gray-800">¿Puedo promocionar los productos en redes sociales?</h4>
+                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-600">
+                        <p>Sí, la plataforma te brinda todas las herramientas y recursos de marketing necesarios, como imágenes, videos y textos persuasivos, para que puedas promocionar los productos en tus redes sociales y llegar a más clientes.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 8 -->
+                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold text-gray-800">¿Se necesita una inversión inicial?</h4>
+                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-600">
+                        <p>Sí, se requiere una inversión inicial para acceder a los productos y al plan de capacitación de Emprende World. Sin embargo, esta inversión es mínima y se recupera rápidamente una vez que empiezas a generar tus primeras ventas y comisiones.</p>
                     </div>
                 </div>
             </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página (Footer) -->
+    <footer class="bg-gray-900 text-white p-6 mt-12">
+        <div class="container mx-auto text-center text-sm">
+            &copy; 2025 Multiservicios Automotriz CS. Todos los derechos reservados.
         </div>
+    </footer>
 
-        <!--
-            Aquí están las "Características" o "Secciones Destacadas".
-            Ahora hay seis secciones para mostrar todas las imágenes.
-        -->
-        <div id="features-wrapper">
-            <div class="container">
-                <div class="row">
-                    <!-- Servicio 1: Diagnóstico -->
-                    <div class="col-4 col-12-medium" id="diagnostico">
-                        <section class="box feature">
-                            <!-- Se corrige el enlace de la imagen que no se mostraba -->
-                            <a href="#" class="image featured"><img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564408/P-1_yvuvj2.png" alt="Diagnóstico computarizado" /></a>
-                            <div class="inner">
-                                <header>
-                                    <h2>Diagnóstico Computarizado</h2>
-                                    <p>Entonación de Vehículos Web</p>
-                                </header>
-                                <p>Mantenimiento Preventivo de tu Vehiculo - todas las marcas.</p>
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- Servicio 2: Revisión General -->
-                    <div class="col-4 col-12-medium" id="revision">
-                        <section class="box feature">
-                            <a href="#" class="image featured"><img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564412/P-2_soo4z5.png" alt="Revisión General de Vehículos" /></a>
-                            <div class="inner">
-                                <header>
-                                    <h2>Revisión General de Vehículos</h2>
-                                    <p>Servicio y Mantenimiento de todo tipo de vehículos</p>
-                                </header>
-                                <p>Revisión detallada de todos los sistemas de su vehículo.</p>
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- Servicio 3: Lubricación -->
-                    <div class="col-4 col-12-medium" id="lubricacion">
-                        <section class="box feature">
-                            <a href="#" class="image featured"><img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564409/P-3_ewbk8e.png" alt="Servicio de Lubricación" /></a>
-                            <div class="inner">
-                                <header>
-                                    <h2>Servicio de Lubricación</h2>
-                                    <p>Cambio de aceite y fluidos</p>
-                                </header>
-                                <p>Mantenimiento de lubricación de su vehículo para el óptimo desempeño.</p>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- Servicio 4: Mantenimiento -->
-                    <div class="col-4 col-12-medium" id="mantenimiento">
-                        <section class="box feature">
-                            <a href="#" class="image featured"><img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564409/P-4_imbrn1.png" alt="Servicio de Mantenimiento" /></a>
-                            <div class="inner">
-                                <header>
-                                    <h2>Mantenimiento</h2>
-                                    <p>Servicios generales de Mantenimiento</p>
-                                </header>
-                                <p>Revisión y mantenimiento de frenos, suspensión y dirección.</p>
-                            </div>
-                        </section>
-                    </div>
-                    <!-- Servicio 5: Electricidad -->
-                    <div class="col-4 col-12-medium" id="electrica">
-                        <section class="box feature">
-                            <a href="#" class="image featured"><img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564413/P-5_xxhb0d.png" alt="Servicios Eléctricos" /></a>
-                            <div class="inner">
-                                <header>
-                                    <h2>Electricidad</h2>
-                                    <p>Mantenimiento y Reparación</p>
-                                </header>
-                                <p>Reparación de fallas eléctricas, alternadores y arranques.</p>
-                            </div>
-                        </section>
-                    </div>
-                    <!-- Servicio 6: Otros Servicios -->
-                    <div class="col-4 col-12-medium" id="otros">
-                        <section class="box feature">
-                            <a href="#" class="image featured"><img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564408/P-6_w7edxu.png" alt="Otros Servicios" /></a>
-                            <div class="inner">
-                                <header>
-                                    <h2>Otros Servicios</h2>
-                                    <p>Mecánica Ligera en General</p>
-                                </header>
-                                <p>Para tu seguridad: Ayudamos a mantener tu vehículo en óptimas condiciones.</p>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--
-            Esta es la sección de "Contenido Principal" que usaremos para "Sobre Nosotros".
-        -->
-        <div id="main-wrapper">
-            <div class="container">
-                <div class="row aln-center">
-                    <div class="col-6 col-12-medium">
-                        <article class="box post">
-                            <header>
-                                <h2><a href="#">Agradecemos tu preferencia!</a></h2>
-                                <p>Sabiendo que tienes otras opciones</p>
-                                <ul class="meta">
-                                    <li class="icon solid fa-clock">20 de agosto, 2025</li>
-                                    <li class="icon solid fa-comments">3 comentarios</li>
-                                </ul>
-                            </header>
-                            <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-                            <p>
-                                Nos Ocupamos en mantener en óptimo estado Tu vehículo para que viajes tranquilo y seguro.
-                            </p>
-                            <footer>
-                                <ul class="actions">
-                                    <li><a href="#" class="button large">Gracias por visitarnos!</a></li>
-                                </ul>
-                            </footer>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--
-            Esta es la sección del pie de página (Footer) que usaremos para "Contacto".
-        -->
-        <div id="footer-wrapper">
-            <footer id="footer" class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Contacto e Íconos de Redes Sociales -->
-                        <section id="contact">
-                            <ul class="icons">
-                                <!-- Cambia el 'href' por la URL de tus redes sociales -->
-                                <li class="icon brands fa-twitter"><a href="#"><span>Twitter</span></a></li>
-                                <li class="icon brands fa-facebook-f"><a href="#"><span>Facebook</span></a></li>
-                                <li class="icon brands fa-instagram"><a href="#"><span>Instagram</span></a></li>
-                                <li class="icon brands fa-linkedin-in"><a href="#"><span>LinkedIn</span></a></li>
-                            </ul>
-                        </section>
-                        <!-- Información de Copyright -->
-                        <div id="copyright">
-                            <ul class="menu">
-                                <li>&copy; 2025 Automotrizcs. Todos los derechos reservados.</li>
-                                <!-- CORRECCIÓN: Se actualiza el texto de 'Diseño' -->
-                                <li>Diseño: <a href="#">EBS Making</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
+    <!-- Botones Flotantes de Contacto con íconos de Font Awesome -->
+    <div class="floating-button">
+        <!-- Botón de WhatsApp -->
+        <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." 
+           class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 transform hover:scale-110"
+           title="WhatsApp">
+            <i class="fa-brands fa-whatsapp fa-xl"></i>
+        </a>
+        <!-- Botón de Llamada -->
+        <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." 
+           class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-110"
+           title="Llamar">
+            <i class="fa-solid fa-phone fa-xl"></i>
+        </a>
     </div>
 
-    <!--
-        Estos son los scripts (código JavaScript) que hacen que la plantilla
-        funcione. Los hemos incluido aquí directamente.
-    -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        // Aquí copiamos el contenido de los archivos JavaScript
-        /*
-            jQuery dropotron v1.4.3 | (c) n33 | n33.co @n33co | MIT licensed
-        */
-        (function($){$.fn.dropotron=function(options){var settings=$.extend({selectorParent:'.dropotron',baseZIndex:1000,openerEvent:'hover',fadeInSpeed:250,fadeOutSpeed:500,delay:50,hideDelay:50,dropButton:'<span class="opener"></span>',expandMode:'child',hoverClass:'hover',cloneOnMobile:!0},options);return this.each(function(){var $this=$(this),$parent=$this.parent();$parent.on('click',function(event){if($(event.target).hasClass('opener')||$(event.target).is('a')&&$(event.target).next().hasClass('opener'))event.preventDefault();else return!0}).on('touchstart',function(event){if($(event.target).hasClass('opener')||$(event.target).is('a')&&$(event.target).next().hasClass('opener'))event.preventDefault()}).on('mouseenter',function(){$parent.addClass(settings.hoverClass)}).on('mouseleave',function(){$parent.removeClass(settings.hoverClass)});$this.css({zIndex:settings.baseZIndex,display:'none',position:'absolute'});$this.on('mouseenter',function(){clearTimeout($this.data('hoverTimeout'))}).on('mouseleave',function(){$this.data('hoverTimeout',setTimeout(function(){$this.fadeOut(settings.fadeOutSpeed)},settings.hideDelay))});$parent.children('a').append(settings.dropButton);$parent.children('a').children('.opener').on('click',function(){if($this.is(':visible')){
-            $this.fadeOut(settings.fadeOutSpeed);
-        } else {
-            $('.dropotron').not($this).fadeOut(settings.fadeOutSpeed);
-            $this.fadeIn(settings.fadeInSpeed);
-        }});$this.on('click',function(event){event.stopPropagation()});$('body').on('click',function(){$this.fadeOut(settings.fadeOutSpeed)})});};})(jQuery);
+        // JavaScript para el comportamiento de las preguntas frecuentes (FAQ)
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Cierra todas las otras preguntas
+                document.querySelectorAll('.faq-item').forEach(el => {
+                    if (el !== item) {
+                        el.classList.remove('active');
+                    }
+                });
 
-        /*
-            browser.min.js
-        */
-        (function(){var e=function(e,t){for(var n=0;n<t.length;n++)e=e.replace(t[n][0],t[n][1]);return e},t=function(e){var t={};e.match(/(\w+)=\S+/g).forEach(function(e){var n=e.split("="),r=n[0];t[r]=n[1]});return t},n=function(e,t){for(var n=0;n<t.length;n++){var r=e.indexOf(t[n]);if(r!=-1)return r}return-1},r=function(r){var o,i,s,a,c,l,u,p,d,f,m,v,y,h,x,g,b=navigator.userAgent;o=(s=!!(b.match(/Trident\/7\.0/)||"ActiveXObject" in window))||(a=!!b.match(/Edge\//))||(c=!!b.match(/(iPad|iPhone|iPod).*OS ([0-9_]+)/))||(l=!!b.match(/Android.+Version\/([0-9\.]+)/))||(u=!!b.match(/Chrome\/([0-9\.]+)/))||(p=!!b.match(/Firefox\/([0-9\.]+)/))||(d=!!b.match(/MSIE ([0-9\.]+)/))||(f=!s&&!a&&!c&&!l&&!u&&!p&&!d&&b.match(/Mozilla/));if(s)i="Internet Explorer";else if(a)i="Edge";else if(c)i="iOS";else if(l)i="Android";else if(u)i="Chrome";else if(p)i="Firefox";else if(d)i="Internet Explorer";else if(f)i="Other";if(l){var w=b.match(/Android.+Version\/([0-9\.]+)/);y=w[1]}if(c){var w=b.match(/(iPad|iPhone|iPod).*OS ([0-9_]+)/);y=w[2].replace(/_/g,".")}if(a){var w=b.match(/Edge\/([0-9\.]+)/);y=w[1]}if(u){var w=b.match(/Chrome\/([0-9\.]+)/);y=w[1]}if(p){var w=b.match(/Firefox\/([0-9\.]+)/);y=w[1]}if(d){var w=b.match(/MSIE ([0-9\.]+)/);y=w[1]}if(s){var w=b.match(/Trident\/7\.0/);y="11"}i||(i=f?"Other":i);v=e(b,[[/(Android|iPad|iPhone|iPod)/,"OS"],[/(Windows)/,"OS"],[/(Macintosh)/,"OS"]]);h=t(v);x=n(b,["Windows","Macintosh","Android","iOS"]);g=b.substr(x,b.length);return{name:i,version:y,os:h.OS,osVersion:h.OSVersion,mobile:!!c||!!l,desktop:!c&&!l}}();window.browser=r();})();
-
-        /*
-            breakpoints.min.js
-        */
-        (function(){var e={};e.init=function(t){var n;for(n in t)e[n]=t[n]};e.get=function(t){return e[t]};e.at=function(t){return e[t].at()};e.is=function(t){return e[t].is()};e.on=function(t,n){e[t].on(n)};e.off=function(t,n){e[t].off(n)};e.trigger=function(t){e[t].trigger()};var t={};t.init=function(n){t.get=function(e){return n[e]};var r;for(r in n){var i=n[r];i.init()}};t.at=function(e){return t.get(e).at()};t.is=function(e){return t.get(e).is()};t.on=function(e,n){t.get(e).on(n)};t.off=function(e,n){t.get(e).off(n)};t.trigger=function(e){t.get(e).trigger()};var n={};n.init=function(e){n.get=function(t){return e[t]};var t;for(t in e){var r=e[t];r.init()}};n.get=function(e){return n[e]};n.at=function(e){return n[e].at()};n.is=function(e){return n[e].is()};n.on=function(e,t){n[e].on(t)};n.off=function(e,t){n[e].off(t)};n.trigger=function(e){n[e].trigger()};window.breakpoints=e;})();
-
-        /*
-            util.js
-        */
-        (function($){
-            var settings = {
-                // Parallax
-                parallax: true,
-                parallaxFactor: 0.5,
-                // Skel
-                skel: null,
-                // Dropdown
-                dropotron: true
-            };
-            var $window = $(window);
-            $window.on('load', function(){
-                // Parallax
-                if (settings.parallax) {
-                    $window.on('scroll.parallax', function(){
-                        var scrollTop = $window.scrollTop();
-                        $('body').css('background-position', 'center ' + (scrollTop * settings.parallaxFactor) + 'px');
-                    });
+                // Alterna la clase 'active' para abrir/cerrar la pregunta clickeada
+                if (!isActive) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
                 }
             });
-            // Dropotron
-            if (settings.dropotron) {
-                $('#nav > ul').dropotron({
-                    mode: 'fade',
-                    hideDelay: 200,
-                    hoverDelay: 0
-                });
-            }
-        })(jQuery);
-
-        /*
-            main.js
-        */
-        (function($) {
-            var $window = $(window),
-                $body = $('body');
-
-            // Breakpoints.
-            breakpoints({
-                xlarge:   [ '1281px',  '1680px' ],
-                large:    [ '981px',   '1280px' ],
-                medium:   [ '737px',   '980px'  ],
-                small:    [ '481px',   '736px'  ],
-                xsmall:   [ null,      '480px'  ]
-            });
-
-            // Play initial animations on page load.
-            $window.on('load', function() {
-                window.setTimeout(function() {
-                    $body.removeClass('is-preload');
-                }, 100);
-            });
-
-            // Nav.
-            var $nav = $('#nav');
-
-            if ($nav.length > 0) {
-
-                // Dropdowns.
-                $nav.find('li').has('ul').prepend('<span class="opener"></span>');
-
-                // Toggle.
-                var $nav_toggle = $('<a href="#nav" class="nav-toggle"></a>');
-
-                $nav_toggle
-                    .on('click', function() {
-
-                        var $this = $(this);
-
-                        $this.toggleClass('active');
-                        $nav.toggleClass('visible');
-
-                    });
-
-                $body.append($nav_toggle);
-
-            }
-        })(jQuery);
+        });
     </script>
-    <script>
-        // Scripts from external libraries.
-    </script>
+
 </body>
 </html>
