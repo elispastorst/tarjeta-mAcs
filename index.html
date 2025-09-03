@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MACS</title>
+    <title>Multiservicios Automotriz CS</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome para íconos -->
@@ -42,37 +42,72 @@
         .faq-item.active .faq-icon {
             transform: rotate(180deg);
         }
+
+        /* Estilos del menú móvil */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #1a202c; /* color del fondo del menú */
+        }
+        .mobile-menu a {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .mobile-menu a:hover {
+            background-color: #2d3748;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
 
-    <!-- Sección de Cabecera con Logo y Teléfono -->
-    <header class="bg-gray-900 text-white py-4">
+    <!-- Sección de Cabecera con Logo, Teléfono y Menú -->
+    <header class="bg-gray-900 text-white py-4 relative">
         <div class="container mx-auto flex items-center justify-between px-6">
             <div class="flex items-center space-x-4">
                 <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564835/LOGO-MSCS_xaz9u0.jpg" alt="Logo" class="h-10 w-10 rounded-full">
-                <span class="text-xl font-bold">MACS</span>
+                <span class="text-xl font-bold">Multiservicios Automotriz CS</span>
             </div>
-            <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." class="flex items-center space-x-2 hover:text-gray-400 transition-colors duration-300">
+
+            <!-- Botón de Menú Móvil -->
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+
+            <!-- Menú de Escritorio -->
+            <nav class="hidden md:flex space-x-6 text-lg">
+                <a href="#inicio" class="hover:text-gray-400 transition duration-300">Inicio</a>
+                <a href="#servicios" class="hover:text-gray-400 transition duration-300">Servicios</a>
+                <a href="#contacto" class="hover:text-gray-400 transition duration-300">Contacto</a>
+                <a href="#ganar-ingresos" class="hover:text-gray-400 transition duration-300">Ganar Ingresos</a>
+            </nav>
+
+            <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." class="flex items-center space-x-2 hover:text-gray-400 transition-colors duration-300 hidden md:flex">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>+58 412 439 2241</span>
+            </a>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="mobile-menu md:hidden absolute w-full left-0 z-50 bg-gray-900 rounded-b-lg">
+            <a href="#inicio" class="block py-2 px-4 hover:bg-gray-800 rounded">Inicio</a>
+            <a href="#servicios" class="block py-2 px-4 hover:bg-gray-800 rounded">Servicios</a>
+            <a href="#contacto" class="block py-2 px-4 hover:bg-gray-800 rounded">Contacto</a>
+            <a href="#ganar-ingresos" class="block py-2 px-4 hover:bg-gray-800 rounded">Ganar Ingresos</a>
+            <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." class="flex items-center space-x-2 py-2 px-4 hover:bg-gray-800 rounded">
                 <i class="fa-brands fa-whatsapp"></i>
                 <span>+58 412 439 2241</span>
             </a>
         </div>
     </header>
 
-    <!-- Sección de Menú (Nav) -->
-    <header class="bg-gray-900 text-white shadow-lg">
-        <div class="container mx-auto p-6 flex justify-between items-center">
-            <h1 class="text-2xl md:text-3xl font-bold">Multiservicios Automotriz CS</h1>
-            <nav class="hidden md:flex space-x-6 text-lg">
-                <a href="#inicio" class="hover:text-gray-400 transition duration-300">Inicio</a>
-                <a href="#servicios" class="hover:text-gray-400 transition duration-300">Servicios</a>
-                <a href="#contacto" class="hover:text-gray-400 transition duration-300">Contacto</a>
-                <!-- Nuevo enlace de menú -->
-                <a href="#ganar-ingresos" class="hover:text-gray-400 transition duration-300">Ganar Ingresos</a>
-            </nav>
-        </div>
-    </header>
 
     <!-- Sección Principal (Hero) -->
     <main class="container mx-auto p-8">
@@ -129,14 +164,7 @@
                 </p>
                 <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." class="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-md">
                     Llamar Ahora
-                </a><div class="mt-8 text-center">
-    <h4 class="text-2xl font-bold text-gray-800 mb-4">Escanea nuestra tarjeta</h4>
-    <div class="bg-gray-100 p-6 rounded-lg shadow-md max-w-sm mx-auto">
-        <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564835/LOGO-MSCS_xaz9u0.jpg" alt="Tarjeta de presentación de Multiservicios Automotriz CS" class="w-full h-auto rounded-lg mb-4">
-        <p class="text-gray-600 mb-4">Escanea este código para guardar nuestra información de contacto.</p>
-        <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1756867771/frame_ytc9hj.png" alt="Código QR de la tarjeta de presentación" class="mx-auto w-32 h-auto">
-    </div>
-</div>
+                </a>
             </div>
         </section>
 
@@ -167,7 +195,7 @@
                         <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
                     </div>
                     <div class="faq-answer mt-4 text-gray-600">
-                        <p>Emprende World es una plataforma que te permite generar ingresos a través de la publicidad digital. Ofrecemos herramientas, entrenamiento, apoyo y acompañamiento.</p>
+                        <p>Emprende World es una plataforma que te permite generar ingresos a través de la venta de productos digitales y servicios. Ofrecemos herramientas, entrenamiento y apoyo para que puedas construir tu propio negocio online.</p>
                     </div>
                 </div>
 
@@ -296,14 +324,27 @@
                 }
             });
         });
+
+        // JavaScript para el menú desplegable móvil
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            if (mobileMenu.style.display === 'flex') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'flex';
+            }
+        });
+
+        // Ocultar el menú móvil al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.style.display = 'none';
+            });
+        });
+
     </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
