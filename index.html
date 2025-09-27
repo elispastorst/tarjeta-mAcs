@@ -3,380 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiservicios Automotriz CS</title>
-    <!-- Tailwind CSS -->
+    <title>Ebsmaking Sublimación - Franelas y Prendas de Vestir</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome para íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/CD+QxTUz/E90Tf+L/9S2kF8y3rE5O+7U/3Q5f9aD5wB5j0F5N5u5j5f9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
+            background-color: #f8f8f8; /* Fondo muy claro */
+            line-height: 1.6;
         }
-
-        /* Estilos para los botones flotantes */
+        .header-bg {
+            /* Fondo con degradado oscuro, evocando moda o taller */
+            background-image: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.95)), url('https://placehold.co/1200x600/000000/ffffff?text=Fondo+Tela+Sublimacion'); 
+            background-size: cover;
+            background-position: center;
+            min-height: 55vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        /* Color principal de la marca: Amarillo Sublimación */
+        .color-primary {
+            color: #FFD700; /* Amarillo vivo/Oro */
+        }
+        .bg-primary {
+            background-color: #FFD700;
+        }
+        .hover\:bg-primary-dark:hover {
+            background-color: #e0bb00;
+        }
+        /* Botones flotantes */
         .floating-button {
             position: fixed;
-            bottom: 20px;
             right: 20px;
             z-index: 1000;
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
-
-        /* Estilos para la sección de preguntas frecuentes */
-        .faq-item {
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .whatsapp-button {
+            bottom: 20px;
+            background-color: #25d366; 
         }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
+        .call-button {
+            bottom: 80px; 
+            background-color: #f04e37; /* Rojo Audaz para Llamada */
         }
-        .faq-item.active .faq-answer {
-            max-height: 200px; /* Ajusta este valor si la respuesta es más larga */
+        /* Estilo para los cards de servicio */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 4px solid #FFD700; /* Borde inferior amarillo */
         }
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        /* Estilos del menú móvil */
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            gap: 1rem;
-            padding: 1rem;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: #1a202c; /* color del fondo del menú */
-        }
-        .mobile-menu a {
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease;
-        }
-        .mobile-menu a:hover {
-            background-color: #2d3748;
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body>
 
-    <!-- Sección de Cabecera con Logo, Teléfono y Menú -->
-    <header class="bg-gray-900 text-white py-4 relative">
-        <div class="container mx-auto flex items-center justify-between px-6">
-            <div class="flex items-center space-x-4">
-                <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564835/LOGO-MSCS_xaz9u0.jpg" alt="Logo" class="h-10 w-10 rounded-full">
-                <span class="text-xl font-bold">Multiservicios Automotriz CS</span>
-            </div>
-
-            <!-- Botón de Menú Móvil -->
-            <button id="menu-button" class="md:hidden text-white focus:outline-none">
-                <i class="fa-solid fa-bars text-xl"></i>
-            </button>
-
-            <!-- Menú de Escritorio -->
-            <nav class="hidden md:flex space-x-6 text-lg">
-                <a href="#inicio" class="hover:text-gray-400 transition duration-300">Inicio</a>
-                <a href="#servicios" class="hover:text-gray-400 transition duration-300">Servicios</a>
-                <a href="#contacto" class="hover:text-gray-400 transition duration-300">Contacto</a>
-                <a href="#ganar-ingresos" class="hover:text-gray-400 transition duration-300">Ganar Ingresos</a>
-            </nav>
-
-            <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." class="flex items-center space-x-2 hover:text-gray-400 transition-colors duration-300 hidden md:flex">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>+58 412 439 2241</span>
-            </a>
-        </div>
-
-        <!-- Menú Desplegable Móvil -->
-        <div id="mobile-menu" class="mobile-menu md:hidden absolute w-full left-0 z-50 bg-gray-900 rounded-b-lg">
-            <a href="#inicio" class="block py-2 px-4 hover:bg-gray-800 rounded">Inicio</a>
-            <a href="#servicios" class="block py-2 px-4 hover:bg-gray-800 rounded">Servicios</a>
-            <a href="#contacto" class="block py-2 px-4 hover:bg-gray-800 rounded">Contacto</a>
-            <a href="#ganar-ingresos" class="block py-2 px-4 hover:bg-gray-800 rounded">Ganar Ingresos</a>
-            <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." class="flex items-center space-x-2 py-2 px-4 hover:bg-gray-800 rounded">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>+58 412 439 2241</span>
-            </a>
-        </div>
-    </header>
-
-
-    <!-- Sección Principal (Hero) -->
-    <main class="container mx-auto p-8">
-        <section id="inicio" class="text-center mb-12">
-            <div class="bg-white p-8 rounded-xl shadow-lg">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">Mantenimiento y Reparación de Confianza</h2>
-                <!-- Imagen de portada "P-1" -->
-                <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755314502/P-1_bcoreg.png" alt="Imagen de portada del taller" class="mx-auto my-6 rounded-lg shadow-md">
-                <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-                    Tu vehículo merece el mejor cuidado. En nuestro taller, ofrecemos diagnósticos precisos, reparaciones eficientes y un servicio al cliente excepcional.
-                </p>
-                <div class="flex justify-center space-x-4">
-                    <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." class="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-md">
-                        Agenda una Cita
-                    </a>
-                    <a href="#servicios" class="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-md">
-                        Ver Servicios
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de Servicios -->
-        <section id="servicios" class="bg-white p-8 rounded-xl shadow-lg mb-12">
-            <h3 class="text-3xl font-bold text-gray-800 text-center mb-8">Nuestros Servicios</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Servicio 1 con imagen P-2 -->
-                <div class="p-6 bg-gray-100 rounded-lg shadow-md text-center">
-                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564412/P-2_soo4z5.png" alt="Diagnóstico Computarizado" class="mx-auto w-full h-auto mb-4 rounded-lg">
-                    <h4 class="font-semibold text-gray-800 text-xl mb-2">Diagnóstico Computarizado</h4>
-                    <p class="text-gray-600">Identificamos el problema de tu vehículo con la última tecnología.</p>
-                </div>
-                <!-- Servicio 2 con imagen P-3 -->
-                <div class="p-6 bg-gray-100 rounded-lg shadow-md text-center">
-                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564409/P-3_ewbk8e.png" alt="Mecánica General" class="mx-auto w-full h-auto mb-4 rounded-lg">
-                    <h4 class="font-semibold text-gray-800 text-xl mb-2">Mecánica General</h4>
-                    <p class="text-gray-600">Reparaciones de motor, frenos, suspensión y más.</p>
-                </div>
-                <!-- Servicio 3 con imagen P-5 -->
-                <div class="p-6 bg-gray-100 rounded-lg shadow-md text-center">
-                    <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564413/P-5_xxhb0d.png" alt="Mantenimiento Preventivo" class="mx-auto w-full h-auto mb-4 rounded-lg">
-                    <h4 class="font-semibold text-gray-800 text-xl mb-2">Mantenimiento Preventivo</h4>
-                    <p class="text-gray-600">Cambio de aceite, filtros y chequeos para evitar problemas futuros.</p>
-                </div>
-            </div>
-        </section>
-<!-- QR Estable para Multiservicios Automotriz CS -->
-<section id="qr-cliente" class="bg-white p-8 rounded-xl shadow-lg mb-12">
-  <div class="text-center">
-    <h3 class="text-3xl font-bold text-gray-800 mb-4">Escanea para abrir la Tarjeta Digital</h3>
-
-    <!-- ENLACE: URL estable en Netlify -->
-    <a href="https://multiservicioautomotrizcs.netlify.app/" target="_blank" rel="noopener">
-      <!-- IMAGEN: QR generado automáticamente desde qrserver -->
-      <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1758345524/qr-multiservicios_ugk0rx.png"
-           alt="QR Multiservicios Automotriz CS"
-           style="width:260px;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.08);">
-    </a>
-
-    <p class="text-gray-500 mt-3">
-      También puedes abrir directamente:  
-      <a href="https://multiservicioautomotrizcs.netlify.app/" target="_blank" class="text-blue-600 underline">
-        https://multiservicioautomotrizcs.netlify.app/
-      </a>
-    </p>
-  </div>
-</section>
-
-
-        <!-- Sección de Contacto -->
-        <section id="contacto" class="bg-white p-8 rounded-xl shadow-lg mb-12">
-            <div class="text-center">
-                <h3 class="text-3xl font-bold text-gray-800 mb-4">Contáctanos y Agenda tu Cita</h3>
-                <p class="text-gray-600 mb-6 max-w-lg mx-auto">
-                    Estamos listos para ayudarte con cualquier problema mecánico.
-                </p>
-                <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." class="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-md">
-                    Llamar Ahora
-                </a>
-            </div>
-        </section>
-
-        <!-- Sección para la página de Emprende World -->
-        <section id="ganar-ingresos" class="bg-white p-8 rounded-xl shadow-lg mb-12">
-            <div class="text-center">
-                <h3 class="text-3xl font-bold text-gray-800 mb-4">Gana Ingresos con Nosotros</h3>
-                <p class="text-gray-600 mb-6 max-w-lg mx-auto">
-                    Escanea el código QR o haz clic en el botón para comenzar a generar ingresos.
-                </p>
-                <!-- Código QR -->
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.emprendeworld.com/websignup?ref=52065737" alt="Código QR para registro en Emprende World" class="mx-auto my-6 rounded-lg shadow-md">
-                <!-- Imagen de "Emprende World" -->
-                <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1755564408/P-6_w7edxu.png" alt="Emprende World" class="mx-auto w-full h-auto my-6 rounded-lg shadow-md">
-                <!-- Nuevo botón de registro -->
-                <a href="https://www.emprendeworld.com/websignup?ref=52065737" class="bg-green-600 text-white px-8 py-4 mt-6 rounded-full font-semibold hover:bg-green-700 transition duration-300 shadow-md">
-                    Registro
-                </a>
-            </div>
-        </section>
-
-        <!-- Sección de Preguntas Frecuentes para Emprende World -->
-        <section id="faq" class="bg-white p-8 rounded-xl shadow-lg mb-12">
-            <h3 class="text-3xl font-bold text-gray-800 text-center mb-8">Preguntas Frecuentes (FAQ)</h3>
-            <div class="max-w-2xl mx-auto space-y-4">
-                <!-- Pregunta 1 -->
-                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
-                    <div class="flex items-center justify-between">
-                        <h4 class="font-semibold text-gray-800">¿Qué es Emprende World?</h4>
-                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
-                    </div>
-                    <div class="faq-answer mt-4 text-gray-600">
-                        <p>Emprende World es una plataforma que te permite generar ingresos a través de la venta de productos digitales y servicios. Ofrecemos herramientas, entrenamiento y apoyo para que puedas construir tu propio negocio online.</p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 2 -->
-                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
-                    <div class="flex items-center justify-between">
-                        <h4 class="font-semibold text-gray-800">¿Cómo funciona el registro?</h4>
-                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
-                    </div>
-                    <div class="faq-answer mt-4 text-gray-600">
-                        <p>El registro es un proceso simple y rápido. Solo necesitas hacer clic en el botón "Registro" y serás redirigido a la página oficial. Una vez allí, completa tus datos para crear tu cuenta y empezar tu camino como emprendedor.</p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 3 -->
-                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
-                    <div class="flex items-center justify-between">
-                        <h4 class="font-semibold text-gray-800">¿Se necesita experiencia previa?</h4>
-                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
-                    </div>
-                    <div class="faq-answer mt-4 text-gray-600">
-                        <p>No, no necesitas experiencia previa. La plataforma de Emprende World ofrece toda la capacitación necesaria para que aprendas desde cero. Tienen módulos de entrenamiento, tutoriales y un equipo de soporte que te guiará en cada paso.</p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 4 -->
-                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
-                    <div class="flex items-center justify-between">
-                        <h4 class="font-semibold text-gray-800">¿Cómo me capacito dentro de la plataforma?</h4>
-                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
-                    </div>
-                    <div class="faq-answer mt-4 text-gray-600">
-                        <p>Una vez registrado, tendrás acceso a un área de miembros con contenido exclusivo que incluye módulos de video, guías y tutoriales. Además, hay sesiones en vivo y grupos de apoyo para que puedas resolver tus dudas.</p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 5 -->
-                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
-                    <div class="flex items-center justify-between">
-                        <h4 class="font-semibold text-gray-800">¿Cuál es el costo de la membresía?</h4>
-                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
-                    </div>
-                    <div class="faq-answer mt-4 text-gray-600">
-                        <p>Emprende World ofrece diferentes planes de membresía para adaptarse a tus necesidades. La inversión varía según el nivel de acceso y las herramientas que necesites para tu negocio. Puedes ver los detalles en la página oficial.</p>
-                    </div>
-                </div>
-                
-                <!-- Pregunta 6 -->
-                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
-                    <div class="flex items-center justify-between">
-                        <h4 class="font-semibold text-gray-800">¿Cómo me pagan mis comisiones?</h4>
-                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
-                    </div>
-                    <div class="faq-answer mt-4 text-gray-600">
-                        <p>Las comisiones se pagan de manera segura y confiable a través de métodos de pago internacionales. Puedes recibir tus ganancias en tu cuenta bancaria o monedero virtual, dependiendo de tu ubicación y preferencia.</p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 7 -->
-                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
-                    <div class="flex items-center justify-between">
-                        <h4 class="font-semibold text-gray-800">¿Puedo promocionar los productos en redes sociales?</h4>
-                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
-                    </div>
-                    <div class="faq-answer mt-4 text-gray-600">
-                        <p>Sí, la plataforma te brinda todas las herramientas y recursos de marketing necesarios, como imágenes, videos y textos persuasivos, para que puedas promocionar los productos en tus redes sociales y llegar a más clientes.</p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 8 -->
-                <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md">
-                    <div class="flex items-center justify-between">
-                        <h4 class="font-semibold text-gray-800">¿Se necesita una inversión inicial?</h4>
-                        <i class="faq-icon fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
-                    </div>
-                    <div class="faq-answer mt-4 text-gray-600">
-                        <p>Sí, se requiere una inversión inicial para acceder a los productos y al plan de capacitación de Emprende World. Sin embargo, esta inversión es mínima y se recupera rápidamente una vez que empiezas a generar tus primeras ventas y comisiones.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Pie de Página (Footer) -->
-   <footer class="bg-gray-900 text-white p-6 mt-12">
-  <div class="container mx-auto text-center text-sm">
-    &copy; 2025 Multiservicios Automotriz CS. Todos los derechos reservados / Diseño Digital de esta Tarjeta: EBS Making - Diseño Digital
-    <br>
-    📲 <a href="https://wa.me/573181739930?text=Hola%2C%20quiero%20más%20información%20sobre%20sus%20servicios."
-          target="_blank"
-          class="text-green-400 underline hover:text-green-200">
-      Contáctame por WhatsApp
-    </a>
-  </div>
-</footer>
-
-
-    <!-- Botones Flotantes de Contacto con íconos de Font Awesome -->
+    <!-- Botones flotantes (WhatsApp y Llamar) -->
     <div class="floating-button">
-        <!-- Botón de WhatsApp -->
-        <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." 
-           class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 transform hover:scale-110"
-           title="WhatsApp">
-            <i class="fa-brands fa-whatsapp fa-xl"></i>
-        </a>
-        <!-- Botón de Llamada -->
-        <a href="https://wa.me/+584124392241?text=Hola,%20quisiera%20agendar%20una%20cita%20en%20el%20taller." 
-           class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-110"
-           title="Llamar">
+        <!-- Botón de Llamada (Flotante Arriba) -->
+        <a href="tel:+573204902268" class="call-button p-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 text-white" aria-label="Llamar">
             <i class="fa-solid fa-phone fa-xl"></i>
+        </a>
+        <!-- Botón de WhatsApp (Flotante Abajo) -->
+        <a href="https://wa.me/573204902268?text=Hola,%20quisiera%20cotizar%20prendas%20sublimadas%20para%20mi%20empresa." class="whatsapp-button p-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 text-white" target="_blank" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp fa-xl"></i>
         </a>
     </div>
 
-    <script>
-        // JavaScript para el comportamiento de las preguntas frecuentes (FAQ)
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
+    <!-- Sección de Cabecera y Menú (Nav) -->
+    <header class="bg-gray-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo y Nombre (CÍRCULO 1: Pequeño en el Encabezado) -->
+            <div class="flex items-center space-x-3">
+                <!-- Ya pusiste aquí la URL de tu logo -->
+                <img src="https://res.cloudinary.com/dysydffc7/image/upload/v1758998615/298724174_476212820997299_7261911157029390615_n_hnoc5z.jpg" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full">
+                <span class="text-xl font-black tracking-wider color-primary">EBSMAKING</span>
+            </div>
+            
+            <!-- Menú de Navegación -->
+            <nav id="nav-menu" class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#inicio" class="hover:text-yellow-400 transition duration-200">Inicio</a>
+                <a href="#productos" class="hover:text-yellow-400 transition duration-200">Productos</a>
+                <a href="#servicios" class="hover:text-yellow-400 transition duration-200">Sublimación</a>
+                <a href="#contacto" class="hover:text-yellow-400 transition duration-200">Contacto</a>
+            </nav>
+
+            <!-- Botón de Menú para Móvil (Hamburguesa) -->
+            <button id="menu-toggle" class="md:hidden p-2 rounded-md hover:bg-gray-700 transition duration-200" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars fa-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Menú Desplegable para Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <nav class="flex flex-col space-y-2 p-4 text-sm font-medium">
+                <a href="#inicio" class="block p-2 rounded hover:bg-gray-700 transition duration-200">Inicio</a>
+                <a href="#productos" class="block p-2 rounded hover:bg-gray-700 transition duration-200">Productos</a>
+                <a href="#servicios" class="block p-2 rounded hover:bg-gray-700 transition duration-200">Sublimación</a>
+                <a href="#contacto" class="block p-2 rounded hover:bg-gray-700 transition duration-200">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Sección de Imagen Principal (Hero) -->
+    <section id="inicio" class="header-bg text-white px-4 py-20">
+        <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 uppercase tracking-widest color-primary">
+            EBSMAKING
+        </h1>
+        <p class="text-5xl sm:text-7xl font-black mb-6 uppercase tracking-tight" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+            TU FÁBRICA DE SUBLIMACIÓN
+        </p>
+        <p class="text-lg sm:text-xl font-medium max-w-3xl text-gray-300">
+            Franelas, Buzos, Shorts y Uniformes personalizados para **Damas, Caballeros y Niños**. ¡Llevamos tu diseño a la tela!
+        </p>
+    </section>
+
+    <!-- Contenido de la Tarjeta (QR, Imagen y Título Principal) -->
+    <section class="flex justify-center -mt-16 sm:-mt-24 px-4" aria-label="Tarjeta Digital">
+        <div class="p-6 sm:p-8 rounded-xl w-full max-w-xl bg-white shadow-2xl">
+            <div class="flex flex-col items-center text-center">
                 
-                // Cierra todas las otras preguntas
-                document.querySelectorAll('.faq-item').forEach(el => {
-                    if (el !== item) {
-                        el.classList.remove('active');
-                    }
-                });
+                <!-- Enlace de Instagram (MÁS IMPORTANTE para Ropa) -->
+                <a href="https://www.instagram.com/ebsmakingco/" target="_blank" class="mb-6">
+                    <!-- CÍRCULO 2: LOGO PRINCIPAL -->
+                    <!-- *** REEMPLAZA EL VALOR DE "src" CON LA URL DE TU LOGO AQUÍ *** -->
+                    <img src="https://www.instagram.com/tulogoaqui_mx/?hl=en" onerror="this.onerror=null;this.src='https://placehold.co/150x150/FFD700/000000?text=LOGO+EBS'" alt="Logo de Ebsmaking" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-yellow-500 shadow-md">
+                </a>
+                
+                <!-- QR Code (Link a WhatsApp para cotizar) -->
+                <div class="mb-4 border-2 border-gray-100 p-2 rounded-lg shadow-inner">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/573204902268?text=Hola,%20quisiera%20cotizar%20prendas%20sublimadas" alt="Código QR de Ebsmaking" class="w-24 h-24 sm:w-32 sm:h-32 object-contain">
+                </div>
 
-                // Alterna la clase 'active' para abrir/cerrar la pregunta clickeada
-                if (!isActive) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
-            });
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-800 uppercase mb-2">
+                    EBSMAKING CO.
+                </h2>
+                <p class="text-base text-gray-500 mb-6">
+                    ¡Tu diseño sublimado en alta calidad!
+                </p>
+            </div>
+            
+            <!-- Botones de Contacto dentro de la Tarjeta -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+                <!-- Botón de WhatsApp -->
+                <a href="https://wa.me/573204902268?text=Hola,%20quisiera%20cotizar%20prendas%20sublimadas%20para%20mi%20empresa." 
+                   class="flex items-center justify-center bg-green-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-green-600 transition duration-300 w-full sm:w-auto"
+                   target="_blank">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> Cotizar por WhatsApp
+                </a>
+                <!-- Botón de Instagram -->
+                <a href="https://www.instagram.com/ebsmakingco/" 
+                   class="flex items-center justify-center bg-pink-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-pink-700 transition duration-300 w-full sm:w-auto"
+                   target="_blank">
+                    <i class="fa-brands fa-instagram mr-2"></i> Ver Catálogo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Productos -->
+    <section id="productos" class="container mx-auto px-4 py-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Nuestros Productos Estrella</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto mb-10">Ofrecemos una amplia gama de prendas de vestir sublimadas y personalizadas.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Producto 1: Franelas / Camisetas -->
+            <div class="p-6 bg-white rounded-xl shadow-lg service-card">
+                <i class="fa-solid fa-shirt text-4xl color-primary mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Franelas y Camisetas</h3>
+                <p class="text-gray-600 text-sm">Para damas, caballeros y niños. Diseños full color.</p>
+            </div>
+            
+            <!-- Producto 2: Buzos / Sudaderas -->
+            <div class="p-6 bg-white rounded-xl shadow-lg service-card">
+                <i class="fa-solid fa-graduation-cap text-4xl color-primary mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Buzos y Hoodies</h3>
+                <p class="text-gray-600 text-sm">Ideales para colecciones de invierno o moda urbana.</p>
+            </div>
+            
+            <!-- Producto 3: Uniformes Empresariales -->
+            <div class="p-6 bg-white rounded-xl shadow-lg service-card">
+                <i class="fa-solid fa-briefcase text-4xl color-primary mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Uniformes Corporativos</h3>
+                <p class="text-gray-600 text-sm">Vestuario de alta calidad para empresas y negocios en general.</p>
+            </div>
+            
+            <!-- Producto 4: Shorts y Ropa Deportiva -->
+            <div class="p-6 bg-white rounded-xl shadow-lg service-card">
+                <i class="fa-solid fa-running text-4xl color-primary mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Shorts y Ropa Deportiva</h3>
+                <p class="text-gray-600 text-sm">Prendas cómodas y duraderas con sublimación resistente.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección de Proceso de Sublimación -->
+    <section id="servicios" class="bg-gray-900 px-4 py-16 text-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold color-primary mb-4">El Proceso de Sublimación</h2>
+            <p class="text-gray-300 max-w-3xl mx-auto mb-10">Garantía de color, durabilidad y alta definición en tus prendas.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Paso 1: Diseño -->
+                <div class="p-6 bg-gray-800 rounded-xl shadow-xl border-2 border-yellow-500">
+                    <i class="fa-solid fa-palette text-4xl color-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">1. Diseño Digital</h3>
+                    <p class="text-gray-400 text-sm">Recibimos tu idea o creamos el diseño perfecto para sublimar.</p>
+                </div>
+                
+                <!-- Paso 2: Impresión y Transferencia -->
+                <div class="p-6 bg-gray-800 rounded-xl shadow-xl border-2 border-yellow-500">
+                    <i class="fa-solid fa-print text-4xl color-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">2. Transferencia de Tinta</h3>
+                    <p class="text-gray-400 text-sm">Usamos tintas y papeles de alta calidad en nuestras máquinas de calor.</p>
+                </div>
+                
+                <!-- Paso 3: Acabado y Entrega -->
+                <div class="p-6 bg-gray-800 rounded-xl shadow-xl border-2 border-yellow-500">
+                    <i class="fa-solid fa-box-open text-4xl color-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">3. Acabado y Entrega</h3>
+                    <p class="text-gray-400 text-sm">Revisamos cada prenda para asegurar el mejor acabado antes de la entrega.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="container mx-auto px-4 py-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">¡Pide tu Cotización Ahora!</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto mb-8">Estamos listos para atender pedidos al mayor y al detal.</p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+            
+            <!-- Botón de Instagram (Principal Call to Action para Catálogo) -->
+            <a href="https://www.instagram.com/ebsmakingco/" 
+               class="flex items-center justify-center bg-pink-600 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-pink-700 transition duration-300 transform hover:scale-105"
+               target="_blank">
+                <i class="fa-brands fa-instagram mr-3"></i> Visita Nuestro Instagram
+            </a>
+            
+            <!-- Contacto por WhatsApp -->
+            <a href="https://wa.me/573204902268?text=Hola,%20quisiera%20cotizar%20prendas%20sublimadas%20para%20mi%20empresa." 
+               class="flex items-center justify-center bg-green-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-green-600 transition duration-300 transform hover:scale-105"
+               target="_blank">
+                <i class="fa-brands fa-whatsapp mr-3"></i> Escríbenos por WhatsApp
+            </a>
+        </div>
+        
+        <p class="text-sm text-gray-500 mt-6">Teléfono: <a href="tel:+573204902268" class="text-red-500 hover:underline font-semibold">320 490 2268</a></p>
+    </section>
+
+    <!-- Pie de Página (Footer) -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg font-black color-primary mb-2">Ebsmaking Sublimación</p>
+            <p class="text-sm text-gray-400 mb-4">La mejor calidad en prendas sublimadas de Cúcuta.</p>
+            <div class="flex justify-center space-x-6 text-xl">
+                <a href="https://www.instagram.com/ebsmakingco/" class="hover:text-yellow-400 transition duration-200" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/573204902268" class="hover:text-yellow-400 transition duration-200" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="text-xs text-gray-500 mt-6">&copy; 2025 Ebsmaking. Hecho con pasión.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Lógica para el menú móvil
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
         });
 
-        // JavaScript para el menú desplegable móvil
-        const menuButton = document.getElementById('menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuButton.addEventListener('click', () => {
-            if (mobileMenu.style.display === 'flex') {
-                mobileMenu.style.display = 'none';
-            } else {
-                mobileMenu.style.display = 'flex';
-            }
-        });
-
-        // Ocultar el menú móvil al hacer clic en un enlace
+        // Cerrar el menú móvil al hacer clic en un enlace de navegación
         document.querySelectorAll('#mobile-menu a').forEach(item => {
             item.addEventListener('click', () => {
-                mobileMenu.style.display = 'none';
+                document.getElementById('mobile-menu').classList.add('hidden');
             });
         });
-
     </script>
-
 </body>
 </html>
-
